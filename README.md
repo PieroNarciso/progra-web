@@ -1,2 +1,2 @@
-# progra-web
+# Progra Web
 Juego de tragamoneda
