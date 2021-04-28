@@ -9,7 +9,7 @@
 
 /*Fondo de imagen*/
 body{
-    background-image: url(../img/casino.png);
+    background-image: url(./assets/img/casino.png);
     background-size: 100% 100%;
     background-attachment:fixed;
     font-family: montserrat;
