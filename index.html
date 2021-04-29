@@ -51,26 +51,28 @@
       </div>
     </nav>
 
-    <div id="header">
-        <input type="checkbox" id="check">
-        <label for="check" class="checkbtn">
-            <i class="fas fa-bars"></i>
-        </label>
-        <label class="nombreTragamoneda">TRAGAMONEDAS CASTLE KING</label>
-        <ul>
-            <li><a class="activo" href="#">Jugar</a></li>
-            <li><a href="#">Ranking</a></li>
-            <li><a href="#">Instrucciones</a></li>
-            <li><a href="#">Acerca de</a></li>
-        </ul>
-
-        <div class="nomMaquina1">
-            <h3> YOUR FORTUNE</h3>
-        </div>
-    
-        <div class="nomMaquina2">
-            <h3> CRAZY MACHINE</h3>
-        </div>
+    <!-- Primer Popup -->
+    <div id="first-popup">
+      <div>
+        <label class="label" for="username">Username</label>
+        <input
+          class="input-text mt-4"
+          type="text"
+          name="username"
+          id="input-popup"
+          value="Leon"
+        />
+      </div>
+      <img id="popup-img" src="src/assets/img/tragamoneda.png" alt="" />
+      <div class="flex" id="popup-actions">
+        <button class="btn btn-secondary" onclick="joinGame()" type="button">
+          Close
+        </button>
+        <button class="btn btn-primary" onclick="joinGame()" type="button">
+          Join Game
+        </button>
+      </div>
+    </div>
 
 
     </div>
