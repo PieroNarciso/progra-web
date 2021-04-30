@@ -9,6 +9,7 @@
   --primary-dark: #991b1b;
   --foreground: #fff;
   --gray: #78716C;
+  --yellow: #f1d978;
   --bg: #f9fafb;
   --outline-none: 2px solid transparent;
   --shadow: 0 4px 6px -1px rgba(0, 0, 0, .1), 0 2px 4px -1px rgba(0, 0, 0, .06);
@@ -63,6 +64,9 @@
 
 .flex {
   display: flex;
+}
+.items-center {
+  align-items: center;
 }
 
 .absolute {
@@ -183,6 +187,10 @@
   margin: 8px;
 }
 
+#header-title {
+  font-weight: 500;
+}
+
 .label {
   color: var(--primary-dark);
   font-weight: 500;
@@ -203,12 +211,18 @@
   margin-top: 4px;
 }
 
-/*Fondo de imagen*/
+#coin-icon {
+  color: var(--yellow);
+  margin-left: 5px;
+}
+#user-coins {
+  color: var(--foreground);
+}
+
 body{
-    /* background-image: url(./assets/img/casino.png); */
     background-size: 100% 100%;
     background-attachment:fixed;
-    font-family: montserrat;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 /*Conteiner superior*/

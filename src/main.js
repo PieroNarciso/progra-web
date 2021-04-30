@@ -24,6 +24,10 @@ const removeMainMenu = () => {
   mainMenu.remove();
 }
 
+const showCoinsStatus = () => {
+  document.querySelector('#coins-container').classList.remove('hidden');
+}
+
 /** Set backgroundImage dynamically */
 const setBackgroundImg = () => {
   document.body.style.backgroundImage = 'url(./src/assets/img/casino.png)';
@@ -34,6 +38,14 @@ const setBackgroundImg = () => {
 const showCoinsAndMaqNames = () => {
   const gameContainer = document.querySelector('#game-container');
   gameContainer.classList.remove('hidden');
+}
+
+/**
+  * Renderiza el nombre de usuario en la cabecera
+  * @param {string} username Nombre del ususario
+  */
+const setUsernameInHeader = (username) => {
+  document.querySelector('#header-title').textContent = username;
 }
 
 /**
@@ -51,6 +63,9 @@ const popupContainer = document.querySelector('#popup-container');
 
 if (!isFirstTime()) {
   popupContainer.remove();
+  // Asigna el título al nombre de usuario
+  setUsernameInHeader(data.username);
+  showCoinsStatus();
 } else {
   inputElement.select();
 }
@@ -58,10 +73,14 @@ if (!isFirstTime()) {
 /**
  * Asigna el nombre de usuario y agrega al `localStorage` que
  * el usuario ya se registró una vez
+ * El nombre del usuario se agrega en el título del header
  */
 const joinGame = () => {
   const inputValue = inputElement.value;
   data.username = inputValue;
   window.localStorage.setItem('firstTime', false);
+  // Change title to show login username
+  setUsernameInHeader(data.username);
+  showCoinsStatus();
   popupContainer.remove();
 };
