@@ -17,6 +17,19 @@ const setNotFirstTime = () => {
 }
 
 /**
+  * Removes Main Menu Element
+  */
+const removeMainMenu = () => {
+  const mainMenu = document.querySelector('#main-menu');
+  mainMenu.remove();
+}
+
+/** Set backgroundImage dynamically */
+const setBackgroundImg = () => {
+  document.body.style.backgroundImage = 'url(./src/assets/img/casino.png)';
+}
+
+/**
  * First POPUP
  * Solo se abre cuando es la primera vez que el usuario entra al juego
  * Luego no se vuelve a mostrar más
@@ -45,5 +58,3 @@ const joinGame = () => {
   window.localStorage.setItem('firstTime', false);
   popupElement.className += ' hidden';
 };
-
-// TODO
