@@ -52,28 +52,29 @@
     </nav>
 
     <!-- Primer Popup -->
-    <div id="first-popup">
-      <div>
-        <label class="label" for="username">Username</label>
-        <input
-          class="input-text mt-4"
-          type="text"
-          name="username"
-          id="input-popup"
-          value="Leon"
-        />
-      </div>
-      <img id="popup-img" src="src/assets/img/tragamoneda.png" alt="" />
-      <div class="flex" id="popup-actions">
-        <button class="btn btn-secondary" onclick="joinGame()" type="button">
-          Close
-        </button>
-        <button class="btn btn-primary" onclick="joinGame()" type="button">
-          Join Game
-        </button>
+    <div id="popup-container">
+      <div id="first-popup">
+        <div>
+          <label class="label" for="username">Username</label>
+          <input
+            class="input-text mt-4"
+            type="text"
+            name="username"
+            id="input-popup"
+            value="Leon"
+          />
+        </div>
+        <img id="popup-img" src="src/assets/img/tragamoneda.png" alt="" />
+        <div class="flex" id="popup-actions">
+          <button class="btn btn-secondary" onclick="joinGame()" type="button">
+            Close
+          </button>
+          <button class="btn btn-primary" onclick="joinGame()" type="button">
+            Join Game
+          </button>
+        </div>
       </div>
     </div>
-
 
     <!-- Menu principal (route '/' ) -->
     <div id="main-menu">
@@ -85,22 +86,24 @@
       </div>
     </div>
 
-    <div class="nomMaquina1">
-      <h3>YOUR FORTUNE</h3>
-    </div>
+    <div id="game-container" class="hidden">
+      <div class="nomMaquina1">
+        <h3 class>YOUR FORTUNE</h3>
+      </div>
 
-    <div class="nomMaquina2">
-      <h3>CRAZY MACHINE</h3>
-    </div>
+      <div class="nomMaquina2">
+        <h3>CRAZY MACHINE</h3>
+      </div>
 
-    <div class="monedas">
-      <div class="moneda_img"><img src="src/assets/img/moneda.png" /></div>
-      <div class="moneda_img"><img src="src/assets/img/moneda.png" /></div>
-      <div class="moneda_img"><img src="src/assets/img/moneda.png" /></div>
-      <div class="moneda_img"><img src="src/assets/img/moneda.png" /></div>
-      <div class="moneda_img"><img src="src/assets/img/moneda.png" /></div>
-      <div class="moneda_img"><img src="src/assets/img/moneda.png" /></div>
-      <div class="moneda_img"><img src="src/assets/img/moneda.png" /></div>
+      <div class="monedas">
+        <div class="moneda_img"><img src="src/assets/img/moneda.png" /></div>
+        <div class="moneda_img"><img src="src/assets/img/moneda.png" /></div>
+        <div class="moneda_img"><img src="src/assets/img/moneda.png" /></div>
+        <div class="moneda_img"><img src="src/assets/img/moneda.png" /></div>
+        <div class="moneda_img"><img src="src/assets/img/moneda.png" /></div>
+        <div class="moneda_img"><img src="src/assets/img/moneda.png" /></div>
+        <div class="moneda_img"><img src="src/assets/img/moneda.png" /></div>
+      </div>
     </div>
   </body>
   <script src="src/utils/tragamonedas.js"></script>
