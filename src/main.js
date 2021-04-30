@@ -28,6 +28,13 @@ const removeMainMenu = () => {
 const setBackgroundImg = () => {
   document.body.style.backgroundImage = 'url(./src/assets/img/casino.png)';
 }
+/**
+  * Muestra las monedas y nombres de las máquinas para apostar
+  */
+const showCoinsAndMaqNames = () => {
+  const gameContainer = document.querySelector('#game-container');
+  gameContainer.classList.remove('hidden');
+}
 
 /**
  * First POPUP
@@ -40,10 +47,10 @@ const inputElement = document.querySelector('#input-popup');
 
 /* Si entra por primera vez o no  */
 /** Popup component */
-const popupElement = document.querySelector('#first-popup');
+const popupContainer = document.querySelector('#popup-container');
 
 if (!isFirstTime()) {
-  popupElement.remove();
+  popupContainer.remove();
 } else {
   inputElement.select();
 }
@@ -56,5 +63,5 @@ const joinGame = () => {
   const inputValue = inputElement.value;
   data.username = inputValue;
   window.localStorage.setItem('firstTime', false);
-  popupElement.className += ' hidden';
+  popupContainer.remove();
 };
