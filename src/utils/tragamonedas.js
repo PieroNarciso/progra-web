@@ -1,15 +1,15 @@
 //JUEGO - INSTALACION =========
-export function bernoulli(p){
+function bernoulli(p){
     return 1 && ( Math.random() < p ) || 0 
 }
-export function getRewards(p, max){
+function getRewards(p, max){
     var reward = 0
     for(var i = 0; i < max ; i++){
     reward += bernoulli(p)
     }
     return reward
 }
-export function debugResult(p, tries, maxRewards){
+function debugResult(p, tries, maxRewards){
     var rewards = []
     var sum = 0
     for(var i = 0; i < tries ; i++){
@@ -19,17 +19,17 @@ export function debugResult(p, tries, maxRewards){
     }
     console.log(rewards, sum, sum/tries)
 }
-export function get2Randoms(options){
+function get2Randoms(options){
     var r1 = Math.floor(Math.random() * options.length)
     var result1 = options.splice(r1, 1)
     var r2 = Math.floor(Math.random() * options.length)
     var result2 = options.splice(r2, 1)
     return [result1[0], result2[0]]
 }
-export function getResultNoReward(){
+function getResultNoReward(){
     return get2Randoms(['J', 'Q', 'K', 'A']).join('')
 }
-export function getResult(p){
+function getResult(p){
     var rewards = []
     var sum = 0
     var maxRewards = 10
@@ -44,18 +44,18 @@ export function getResult(p){
     }
     return result
 }
-export function getWin(result){
+function getWin(result){
     var results = {
         'JJ': 2, 'QQ': 3, 'KK': 4, 'AA': 10
     }
     var win = results[result]
     return win || 0
 }
-export function getDistributions(){
+function getDistributions(){
     return get2Randoms([0.2, 0.4])
 }
 
-export function apostarYJugar(maquina, apuesta){
+function apostarYJugar(maquina, apuesta){
     var resultado = getResult(maquina)
     var ganancia = getWin(resultado)
     return {
@@ -64,7 +64,7 @@ export function apostarYJugar(maquina, apuesta){
     }
 }
 
-export function imprimirIntento(i, maquina, intento){
+function imprimirIntento(i, maquina, intento){
      console.log(
         i + '-',
         maquina + ':', 

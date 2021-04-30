@@ -1,51 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
     <title></title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <link href="src/style.css" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- <script src="https://kit.fontawesome.com/a076d05399.js"></script> -->
+    <link href="src/style.css" rel="stylesheet" />
   </head>
 
   <body>
+    <!-- HEADER -->
+    <nav id="header">
+      <div class="inline header-left">
+        <button
+          class="icon burger-icon inline-block"
+          onclick="openBurgerMenu()"
+          type="button"
+          id="burger-button"
+        >
+          <svg class="w-6 h-6" viewBox="0 0 24 24">
+            <path
+              fill="currentColor"
+              d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z"
+            />
+          </svg>
+        </button>
+        <a href="/#" class="inline">TRAGAMONEDAS CASTLE KING</a>
+      </div>
+      <div>
+        <button
+          class="icon"
+          type="button"
+          onclick="openOptionsMenu()"
+          id="option-button"
+        >
+          <svg class="w-6 h-6" viewBox="0 0 24 24">
+            <path
+              fill="currentColor"
+              d="M12,16A2,2 0 0,1 14,18A2,2 0 0,1 12,20A2,2 0 0,1 10,18A2,2 0 0,1 12,16M12,10A2,2 0 0,1 14,12A2,2 0 0,1 12,14A2,2 0 0,1 10,12A2,2 0 0,1 12,10M12,4A2,2 0 0,1 14,6A2,2 0 0,1 12,8A2,2 0 0,1 10,6A2,2 0 0,1 12,4Z"
+            />
+          </svg>
+        </button>
+      </div>
 
-    <div id="header">
-        <input type="checkbox" id="check">
-        <label for="check" class="checkbtn">
-            <i class="fas fa-bars"></i>
-        </label>
-        <label class="nombreTragamoneda">TRAGAMONEDAS CASTLE KING</label>
-        <ul>
-            <li><a class="activo" href="#">Jugar</a></li>
-            <li><a href="#">Ranking</a></li>
-            <li><a href="#">Instrucciones</a></li>
-            <li><a href="#">Acerca de</a></li>
-        </ul>
+      <div id="option-menu" onclick="closeOptionMenu()" class="hidden">
+        <a href="#">Jugar</a>
+        <a href="/#/ranking">Ranking</a>
+        <a href="/#/instrucciones">Instrucciones</a>
+        <a href="/#/acerca-de">Acerca De</a>
+      </div>
+    </nav>
 
-        <div class="nomMaquina1">
-            <h3> YOUR FORTUNE</h3>
-        </div>
-    
-        <div class="nomMaquina2">
-            <h3> CRAZY MACHINE</h3>
-        </div>
-
-
+    <!-- Primer Popup -->
+    <div id="first-popup">
+      <div>
+        <label class="label" for="username">Username</label>
+        <input
+          class="input-text mt-4"
+          type="text"
+          name="username"
+          id="input-popup"
+          value="Leon"
+        />
+      </div>
+      <img id="popup-img" src="src/assets/img/tragamoneda.png" alt="" />
+      <div class="flex" id="popup-actions">
+        <button class="btn btn-secondary" onclick="joinGame()" type="button">
+          Close
+        </button>
+        <button class="btn btn-primary" onclick="joinGame()" type="button">
+          Join Game
+        </button>
+      </div>
     </div>
 
 
-    <div class= "monedas">
-        <div class="moneda_img"><img src="src/assets/img/moneda.png"></div>
-        <div class="moneda_img"><img src="src/assets/img/moneda.png"></div>
-        <div class="moneda_img"><img src="src/assets/img/moneda.png"></div>
-        <div class="moneda_img"><img src="src/assets/img/moneda.png"></div>
-        <div class="moneda_img"><img src="src/assets/img/moneda.png"></div>
-        <div class="moneda_img"><img src="src/assets/img/moneda.png"></div>
-        <div class="moneda_img"><img src="src/assets/img/moneda.png"></div>
+    <!-- Menu principal (route '/' ) -->
+    <div id="main-menu">
+      <div>
+        <a class="btn btn-primary" href="#">Jugar</a>
+        <a class="btn btn-secondary" href="/#/ranking">Ranking</a>
+        <a class="btn btn-secondary" href="/#/instrucciones">Instrucciones</a>
+        <a class="btn btn-secondary" href="/#/acerca-de">Acerca De</a>
+      </div>
     </div>
 
-    <script src="src/main.js"></script>
+    <div class="nomMaquina1">
+      <h3>YOUR FORTUNE</h3>
+    </div>
+
+    <div class="nomMaquina2">
+      <h3>CRAZY MACHINE</h3>
+    </div>
+
+    <div class="monedas">
+      <div class="moneda_img"><img src="src/assets/img/moneda.png" /></div>
+      <div class="moneda_img"><img src="src/assets/img/moneda.png" /></div>
+      <div class="moneda_img"><img src="src/assets/img/moneda.png" /></div>
+      <div class="moneda_img"><img src="src/assets/img/moneda.png" /></div>
+      <div class="moneda_img"><img src="src/assets/img/moneda.png" /></div>
+      <div class="moneda_img"><img src="src/assets/img/moneda.png" /></div>
+      <div class="moneda_img"><img src="src/assets/img/moneda.png" /></div>
+    </div>
   </body>
+  <script src="src/utils/tragamonedas.js"></script>
+  <script src="src/utils/navbar.js"></script>
+  <script src="src/main.js"></script>
 </html>
