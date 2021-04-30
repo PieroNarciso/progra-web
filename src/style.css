@@ -58,7 +58,7 @@
 }
 
 .hidden {
-  visibility: hidden;
+  display: none;
 }
 
 .flex {
