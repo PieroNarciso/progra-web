@@ -1,6 +1,6 @@
 const template = `
   <nav
-    class="bg-primary px-2 py-2 flex justify-between fixed top-0 left-0 w-full items-center z-50"
+    class="bg-primary px-2 py-2 flex justify-between w-full items-center z-50"
   >
     <a id="header-title" class="text-lg text-white font-medium" href="#"
       >CASTLE KING</a
@@ -33,6 +33,7 @@ const template = `
       id="option-menu"
       class="absolute right-1 top-1 bg-white rounded shadow-md hidden"
     >
+      <a class="nav" href="/#">Home</a>
       <a class="nav" href="/#/juego">Jugar</a>
       <a class="nav" href="/#/ranking">Ranking</a>
       <a class="nav" href="/#/instrucciones">Instrucciones</a>
@@ -41,7 +42,13 @@ const template = `
   </nav>
 `;
 
-export default () => {
+/**
+  * @typedef {Object} Props
+  * @property {string} username
+  *
+  * @param {Props} props
+  */
+const Navbar = ({ username }) => {
   /** toggle menu floating */
   const toggleMenuBar = () => {
     const optionMenu = document.querySelector('#option-menu');
@@ -76,8 +83,12 @@ export default () => {
     node.addEventListener('click', toggleMenuBar);
   });
 
+  navBar.querySelector('#header-title').textContent = username? username : 'CASTLE KING';
+
   /** Close option menu cuando se hace clic fuera */
   window.addEventListener('click', closeOptionMenu);
 
   return navBar;
 };
+
+export default Navbar;

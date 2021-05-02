@@ -1,12 +1,6 @@
 import './styles.css';
-
-import Navbar from './components/Navbar';
-import Popup from './components/Popup';
-import MainPage from './views/MainPage';
+import './assets/style.css';
+import App from './App.js';
 
 
-// NavBar
-document.querySelector('#navbar').replaceWith(Navbar());
-
-document.querySelector('#view').appendChild(MainPage());
-document.body.appendChild(Popup());
+document.addEventListener('DOMContentLoaded', App);
