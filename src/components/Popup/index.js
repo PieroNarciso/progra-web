@@ -32,8 +32,8 @@ export default () => {
     popupEl.classList.add('hidden');
   }
 
-  const popupEl = document.createElement('div'); 
-  popupEl.className = 'absolute h-screen w-screen flex items-center justify-center';
+  const popupEl = document.createElement('div');
+  popupEl.className = 'absolute h-screen w-screen flex items-center justify-center z-20 top-0 left-0';
 
   popupEl.innerHTML = template;
 

@@ -12,7 +12,7 @@
     @apply rounded border-2 focus:ring-0 border-primary focus:border-primary-darker;
   }
   .btn {
-    @apply px-3 py-2 focus:outline-none font-medium tracking-wide rounded text-center;
+    @apply px-3 py-2 focus:outline-none font-medium tracking-wide rounded text-center w-full;
   }
   .btn-primary {
     @apply bg-primary hover:bg-primary-darker text-white;
