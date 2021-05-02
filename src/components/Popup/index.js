@@ -14,7 +14,7 @@ const template = `
         />
       </label>
       <div class="mx-8">
-        <img class="mt-4" src="public/tragamoneda.png" alt="" />
+        <img class="mt-4" src="/tragamoneda.png" alt="" />
       </div>
 
       <div class="flex justify-end mt-4">
