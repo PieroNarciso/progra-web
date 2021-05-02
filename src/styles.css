@@ -2,7 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+
 @layer components {
+  .nav {
+    @apply block px-2 py-2 text-center hover:bg-primary-darker hover:text-white;
+  }
+
+  .input-text {
+    @apply rounded border-2 focus:ring-0 border-primary focus:border-primary-darker;
+  }
   .btn {
+    @apply px-3 py-2 focus:outline-none font-medium tracking-wide rounded text-center;
+  }
+  .btn-primary {
+    @apply bg-primary hover:bg-primary-darker text-white;
+  }
+  .btn-secondary {
+    @apply border-2 border-primary hover:border-primary-darker text-primary hover:text-primary-darker;
   }
 }
