@@ -52,14 +52,32 @@ export default () => {
     }
   }
 
+
+  /**
+    * @param {MouseEvent} event
+    */
+  const closeOptionMenu = (event) => {
+    if (
+      !optionContainer.contains(event.target) &&
+      !document.querySelector('#option-button').contains(event.target) &&
+      !optionContainer.classList.contains('hidden')
+    ) {
+      optionContainer.classList.add('hidden');
+    }
+  }
+
   const navBar = document.createElement('nav');
   navBar.innerHTML = template;
 
   navBar.querySelector('#option-button').addEventListener('click', toggleMenuBar);
+  const optionContainer = navBar.querySelector('#option-menu');
 
   navBar.querySelectorAll('.nav').forEach(node => {
     node.addEventListener('click', toggleMenuBar);
   });
+
+  /** Close option menu cuando se hace clic fuera */
+  window.addEventListener('click', closeOptionMenu);
 
   return navBar;
 };
