@@ -16,7 +16,7 @@ const GameView = () => {
         <p class="absolute"> Cantidad a apostar: </p>
         <input id ='cantidad-maq-1' class="text-black absolute mt-8 py-2 px-4 w-16 h-10 border-blue-400 bg-white rounded-md border-2" type="text" value="10">
         <button class="absolute mt-8 ml-32 py-2 px-4 rounded-md bg-blue-400""><b>Jugar</b></button>
-        <button id="aumentar1" class="btaumentar absolute mt-8 ml-20 px-2 bg-blue-400 text-xs" onclick="aumentarMonedas()"><b>v</b></button>
+        <button id="aumentar1" class="btaumentar absolute mt-8 ml-20 px-2 bg-blue-400 text-xs"><b>v</b></button>
         <button class="absolute mt-14 ml-20 px-2 bg-blue-400 text-xs"><b>v</b></button>
       </div>
       <div class="pr-56">
@@ -46,8 +46,7 @@ const GameView = () => {
   */
 export const GameViewEvents = (viewElement) => {
   const aumentarMonedas = () => {
-    //viewElement.querySelector('#cantidad-maq-1').innerHTML = viewElement.querySelector('#cantidad-maq-1').value + 10
-    console.log("a")
+    viewElement.querySelector('#cantidad-maq-1').value = parseInt(viewElement.querySelector('#cantidad-maq-1').value) + 10
   }
   viewElement.querySelector('#aumentar1').addEventListener('click', aumentarMonedas);
 }
