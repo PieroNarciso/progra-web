@@ -48,6 +48,7 @@ export const PopupEvents = (viewElement) => {
     document.querySelector('#header-title').textContent = inputValue;
     window.location.hash = '#/';
   }
+  viewElement.querySelector('#username-input').select();
   viewElement.querySelector('#popup-form').addEventListener('submit', joinGame);
 }
 
