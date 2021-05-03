@@ -1,6 +1,7 @@
 import Popup, { PopupEvents } from '../Popup';
 import MainPage from '../../views/MainPage';
 import GameView from '../../views/GameView';
+import RankingView from '../../views/RankingView';
 
 /**
  * @param {HTMLDivElement} viewElement
@@ -28,7 +29,8 @@ const Router = (viewElement) => {
     viewElement.style.backgroundImage = 'url("casino.png")';
     viewElement.innerHTML = GameView();
   } else if (hash === '#/ranking') {
-    viewElement.innerHTML = `Ranking`;
+    viewElement.className = 'flex justify-center py-6'
+    viewElement.innerHTML = RankingView();
   } else if (hash === '#/instrucciones') {
     viewElement.innerHTML = 'Instrucciones';
   } else if (hash === '#/acerca-de') {
