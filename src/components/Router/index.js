@@ -21,7 +21,7 @@ const Router = (viewElement) => {
   }
 
   // Router logic
-  if (!hash || hash === '#') {
+  if (!hash || hash === '#/' || hash === '#') {
     viewElement.className = 'flex justify-center';
     viewElement.innerHTML = MainPage();
   } else if (hash === '#/juego') {
