@@ -6,7 +6,7 @@
   */
 const Popup = ({ username }) => {
 
-  return `
+  return /*html*/`
     <div
       class="bg-white rounded-md shadow-md px-4 py-3 border-primary border-2 mx-4"
     >
