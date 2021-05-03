@@ -1,4 +1,5 @@
 import Popup, { PopupEvents } from '../Popup';
+import ChangeName, { ChangeNameEvents } from '../ChangeName';
 import MainPage from '../../views/MainPage';
 import GameView from '../../views/GameView';
 import RankingView from '../../views/RankingView';
@@ -34,7 +35,7 @@ const Router = (viewElement) => {
   } else if (hash === '#/instrucciones') {
     viewElement.innerHTML = 'Instrucciones';
   } else if (hash === '#/acerca-de') {
-    viewElement.innerHTML = `Acerca De`;
+    viewElement.innerHTML = `#/acerca-de`;
   } else {
     viewElement.innerHTML = `Default`;
   }
