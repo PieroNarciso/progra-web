@@ -1,19 +1,22 @@
-import {GameData} from '../models/game';
-
 export class User {
   /**
+    * @typedef {Object} MetaData
+    * @property {number} apuesta
+    * @property {number} ganancia
+    * @property {'A' | 'B'} maq
+    *
    * @param {string} username
     * @param {number} coins
-    * @param {GameData[]} metadata
+    * @param {MetaData} data
    */
-  constructor(username, coins, metadata) {
+  constructor(username, coins = 200, data = []) {
     this.username = username || 'Leon';
-    this.coins = coins || 200;
-    this.metadata = metadata || [];
+    this.coins = coins;
+    this.metadata = data;
   }
 
   /**
-    * @param {GameData} data
+    * @param {MetaData} data
     */
   addMetadata(data) {
     this.metadata.push(data);
@@ -22,7 +25,7 @@ export class User {
   /**
    * @param {string} newUsername
    */
-  changeUsername(newUsername) {
+  __changeUsername(newUsername) {
     this.username = newUsername;
   }
 

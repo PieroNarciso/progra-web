@@ -5,9 +5,9 @@ export class State {
    * @param {{ user: User, users: User[], music: boolean }} state
    */
   constructor({ user, users, music }) {
-    this.user = user || new User();
-    this.users = users || [];
-    this.music = music || true;
+    this.user = new User(user.username, user.coins, user.metadata);
+    this.users = users;
+    this.music = music;
   }
 
   /**
@@ -17,9 +17,24 @@ export class State {
    * registrado anteriormente
    */
   userExists(username) {
-    const user = this.users.find((user) => user.username === username);
+    const user = this.findUser(username);
     if (user) return true;
     return false;
+  }
+
+  findUser(username) {
+    const user = this.users.find((user) => user.username === username);
+    return user;
+  }
+
+  changeUsername(username) {
+    const user = this.findUser(username);
+    this.__addLoginUser();
+    if (user) {
+      this.user = new User(user.username, user.coins, user.metadata)
+    } else {
+      this.user = new User(username)
+    }
   }
 
   storeBeforeSave() {
@@ -27,7 +42,9 @@ export class State {
   }
 
   __addLoginUser() {
-    this.users.push(this.user);
+    if (!this.userExists(this.user.username)) {
+      this.users.push(this.user);
+    }
   }
 
   toogleMusic() {
