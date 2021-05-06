@@ -18,6 +18,6 @@
     @apply bg-primary hover:bg-primary-darker text-white;
   }
   .btn-secondary {
-    @apply border-2 border-primary hover:border-primary-darker text-primary hover:text-primary-darker;
+    @apply border-2 border-primary hover:bg-primary text-primary hover:text-white transition duration-300;
   }
 }
