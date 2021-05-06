@@ -1,11 +1,30 @@
 import './styles.css';
+// import './assets/style.css';
+import App from './App.js';
+import store from './store';
+import { State } from './models/state';
+import { User } from './models/user';
 
-import Navbar from './components/Navbar';
-import Popup from './components/Popup';
-import Instrucciones from './components/Instrucciones';
 
 
-// NavBar
-document.querySelector('#navbar').replaceWith(Navbar());
-document.querySelector('#view').appendChild(Instrucciones());
+const isLoaded = store.load();
+if (!isLoaded) {
+  store.create(new State({
+    user: new User(),
+    users: [],
+    music: true,
+  }));
+}
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  App();
+});
+
+
+
+
+window.onbeforeunload = () => {
+  store.save();
+}
 
