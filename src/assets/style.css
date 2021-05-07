@@ -148,6 +148,9 @@ label.nombreTragamoneda {
 .moneda_img:nth-child(8){
     left:6%; animation-duration: 2s; animation-delay: 3s;
 }
+.btaumentar{
+    transform: rotate(180deg);
+}
 
 @keyframes monedas{
     0%{
@@ -171,14 +174,14 @@ label.nombreTragamoneda {
     font-family: "Fredoka One";
     font-size: 20pt;
     position: absolute;
-    left: 35%;
+    left: 36%;
     top: 94%;
     transform: translateX(-80%) translateY(-80%);
     line-height: 0.30em;
     animation: animacion 4s linear infinite;
 }
 
-@keyframes animacion {
+/*@keyframes animacion {
     0%{
         color: white;
     }
@@ -193,7 +196,7 @@ label.nombreTragamoneda {
         0 0 2000px #03bcf4;
     }
 }
-
+*/
 
 .nomMaquina2 h3{
     letter-spacing: 4px;
@@ -201,7 +204,7 @@ label.nombreTragamoneda {
     text-align: center;
     font-size: 20pt;
     position: absolute;
-    left: 67%;
+    left: 69%;
     top: 94%;
     transform: translateX(-50%) translateY(-80%);
     line-height: 0.30em;
@@ -209,7 +212,7 @@ label.nombreTragamoneda {
 }
 
 
-@keyframes anima {
+/*@keyframes anima {
     0%{
         color: white;
     }
@@ -224,7 +227,7 @@ label.nombreTragamoneda {
         0 0 2000px #CD1B8B;
 
     }
-}
+}*/
 
 @media (max-width: 858px ){
     .nomMaquina1 h3{

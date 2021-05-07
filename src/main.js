@@ -5,6 +5,8 @@ import store from './store';
 import { State } from './models/state';
 import { User } from './models/user';
 
+
+
 const isLoaded = store.load();
 if (!isLoaded) {
   store.create(new State({
@@ -14,10 +16,15 @@ if (!isLoaded) {
   }));
 }
 
+
 document.addEventListener('DOMContentLoaded', () => {
   App();
 });
 
+
+
+
 window.onbeforeunload = () => {
   store.save();
 }
+
