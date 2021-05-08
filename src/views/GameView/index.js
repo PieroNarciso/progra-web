@@ -1,32 +1,45 @@
+import store from '../../store'
+
 const GameView = () => {
   return /*html*/`
-    <div class="nomMaquina1 text-white">
+    <!--<div class="nomMaquina1 text-white">
       <h3 class>YOUR FORTUNE</h3>
     </div>
     </div>
     <div class="nomMaquina2 text-white">
       <h3 class=>CRAZY MACHINE</h3>
+    </div> -->
+
+    <div class="flex flex-wrap h-full">
+      <div class="flex w-full h-1/2 items-center border-black border-4 justify-center">
+        <img class="h-4/5" src="maq-celeste.png">
+        <div id="centrardiv" class="">
+          <input id ='cantidad-maq-1' class="text-black w-16 h-10 border-blue-500 bg-white rounded-md border-2" type="text" value="10">
+          <button id = 'jugar1' class="rounded-md bg-blue-500 text-white"><b>Apostar</b></button>
+          <button id="aumentar1" class="transform rotate-180 bg-blue-500 text-xs"><b>v</b></button>
+          <button id="disminuir1" class="bg-blue-500 text-xs"><b>v</b></button>
+        </div>
+      </div>
+      <div class="flex justify-center items-center w-full h-1/2 border-black border-4">
+        <img class="h-4/5" src="maq-rosa.png" >
+        <div id="centrardiv2" class="">
+          <input id ='cantidad-maq-2' class="text-black w-16 h-10 border-pink-500 bg-white rounded-md border-2" type="text" value="10">
+          <button id = 'jugar2' class="rounded-md bg-pink-500 text-white"><b>Apostar</b></button>
+          <button id="aumentar2" class="transform rotate-180 bg-pink-500 text-xs"><b>v</b></button>
+          <button id="disminuir2" class="bg-pink-500 text-xs"><b>v</b></button>
+        </div>
+      </div>
     </div>
-    <div class="w-full h-64 text-white absolute mt-36 flex justify-evenly">
-      <img class="h-full" src="/public/maq-celeste.png">
-      <img class="h-full" src="/public/maq-rosa.png" >
-    </div>
-    <div class="w-full h-32 text-white absolute mt-96 pt-4 flex justify-evenly">
+    
+    <!--
       <div class="pr-56">
         <p class="absolute"> Cantidad a apostar: </p>
-        <input id ='cantidad-maq-1' class="text-black absolute mt-8 py-2 px-4 w-16 h-10 border-blue-400 bg-white rounded-md border-2" type="text" value="10">
-        <button class="absolute mt-8 ml-32 py-2 px-4 rounded-md bg-blue-400""><b>Jugar</b></button>
-        <button id="aumentar1" class="btaumentar absolute mt-8 ml-20 px-2 bg-blue-400 text-xs"><b>v</b></button>
-        <button class="absolute mt-14 ml-20 px-2 bg-blue-400 text-xs"><b>v</b></button>
+        <input id="cantidad-maq-2" class="text-black absolute mt-8 py-2 px-4 w-16 h-10 border-pink-500 bg-white rounded-md border-2" type="text" value="10">
+        <button class="absolute mt-8 ml-32 py-2 px-4 rounded-md bg-pink-500"><b>Apostar</b></button>
+        <button id="aumentar2" class="transform rotate-180 absolute mt-8 ml-20 px-2 bg-pink-500 text-xs"><b>v</b></button>
+        <button id="disminuir2" class="absolute mt-14 ml-20 px-2 bg-pink-500 text-xs"><b>v</b></button>
       </div>
-      <div class="pr-56">
-        <p class="absolute"> Cantidad a apostar: </p>
-        <input class="text-black absolute mt-8 py-2 px-4 w-16 h-10 border-pink-500 bg-white rounded-md border-2" type="text" value="10">
-        <button class="absolute mt-8 ml-32 py-2 px-4 rounded-md bg-pink-500"><b>Jugar</b></button>
-        <button class="btaumentar absolute mt-8 ml-20 px-2 bg-pink-500 text-xs"><b>v</b></button>
-        <button class="absolute mt-14 ml-20 px-2 bg-pink-500 text-xs"><b>v</b></button>
-      </div>
-    </div> 
+    </div> -->
 
     <!--
     <div class="monedas">
@@ -45,10 +58,103 @@ const GameView = () => {
   * @param {HTMLDivElement} viewElement
   */
 export const GameViewEvents = (viewElement) => {
-  const aumentarMonedas = () => {
-    viewElement.querySelector('#cantidad-maq-1').value = parseInt(viewElement.querySelector('#cantidad-maq-1').value) + 10
+  const { user } = store.getStore()
+
+  const bloquearBotones = (tipo, nro) => {
+    try {
+      if (tipo == 0) {
+        if (nro == 1) {
+          viewElement.querySelector('#aumentar1').classList.replace('bg-gray-400', 'bg-blue-500');
+          viewElement.querySelector('#aumentar1').disabled = false;
+          viewElement.querySelector('#disminuir1').classList.replace('bg-gray-400', 'bg-blue-500');
+          viewElement.querySelector('#disminuir1').disabled = false;
+        } else if (nro == 2) {
+          viewElement.querySelector('#aumentar2').classList.replace('bg-gray-400', 'bg-pink-500');
+          viewElement.querySelector('#aumentar2').disabled = false;
+          viewElement.querySelector('#disminuir2').classList.replace('bg-gray-400', 'bg-pink-500');
+          viewElement.querySelector('#disminuir2').disabled = false;
+        }
+      }
+      else if (tipo == 3){
+        if (nro == 1) {
+          
+        }
+      }
+      else {
+        if (tipo == 1) {
+          if (nro == 1) {
+            var btn = viewElement.querySelector('#aumentar1');
+            btn.classList.remove('bg-blue-500');
+          } else if (nro == 2) {
+            var btn = viewElement.querySelector('#aumentar2');
+            btn.classList.remove('bg-pink-500');
+          }
+        }
+        else if (tipo == 2) {
+          if (nro == 1) {
+            var btn = viewElement.querySelector('#disminuir1');
+            btn.classList.remove('bg-blue-500');
+          } else if (nro == 2) {
+            var btn = viewElement.querySelector('#disminuir2');
+            btn.classList.remove('bg-pink-500');
+          }
+        }
+        btn.classList.add('bg-gray-400')
+        btn.disabled = true;
+      }
+    } catch { }
   }
-  viewElement.querySelector('#aumentar1').addEventListener('click', aumentarMonedas);
+
+  const revisar = (num) => {
+    const inputTxt = viewElement.querySelector('#cantidad-maq-'.concat(num));
+
+    if (inputTxt.value >= user.coins) {
+      if(inputTxt1.value > user.coins) bloquearBotones(3,1)
+      bloquearBotones(1, 1);
+    }
+    if (inputTxt2.value >= user.coins) {
+      bloquearBotones(1, 2);
+      console.log('h')
+    }
+    if (inputTxt1.value <= 0) {
+      bloquearBotones(2, 1);
+    }
+    if (inputTxt2.value <= 0) {
+      bloquearBotones(2, 2);
+    }
+    if (inputTxt1.value > 0 && inputTxt1.value < user.coins) {
+      bloquearBotones(0,1);
+    }
+    if (inputTxt2.value > 0 && inputTxt2.value < user.coins) {
+      bloquearBotones(0, 2);
+    }
+  }
+
+  const aumentarMonedas = (num) => {
+    const nuevoMonto = parseInt(viewElement.querySelector('#cantidad-maq-'.concat(num)).value) + 10;
+    if (user.coins >= nuevoMonto) {
+      viewElement.querySelector('#cantidad-maq-' + num).value = nuevoMonto
+      if (nuevoMonto >= user.coins) bloquearBotones(1, num);
+      else bloquearBotones(0, num);
+    }
+  }
+
+  const disminuirMonedas = (num) => {
+    const nuevoMonto = parseInt(viewElement.querySelector('#cantidad-maq-'.concat(num)).value) - 10;
+    if (nuevoMonto >= 0) {
+      viewElement.querySelector('#cantidad-maq-' + num).value = nuevoMonto
+      if (0 >= nuevoMonto) bloquearBotones(2, num);
+      else bloquearBotones(0, num);
+    }
+  }
+
+  viewElement.querySelector('#aumentar1').addEventListener('click', () => aumentarMonedas(1));
+  viewElement.querySelector('#disminuir1').addEventListener('click', () => disminuirMonedas(1));
+  viewElement.querySelector('#aumentar2').addEventListener('click', () => aumentarMonedas(2));
+  viewElement.querySelector('#disminuir2').addEventListener('click', () => disminuirMonedas(2));
+  viewElement.querySelector('#cantidad-maq-1').addEventListener('change', () => revisar);
+  viewElement.querySelector('#cantidad-maq-2').addEventListener('change', () => revisar);
+
 }
 
 export default GameView;

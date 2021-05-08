@@ -1,5 +1,95 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet');
 
+#centrardiv{
+    position:absolute;
+    top: 239px;
+    width: 180px;
+    height: 40px;
+    left: 24.5%;
+
+}
+
+#jugar1{
+    position: absolute;
+    left: 66%;
+    top: 11%;
+    font-size: x-small;
+    padding: 6px;
+    padding-bottom: 5px;
+    border: solid black 1px;
+}
+#cantidad-maq-1{
+    position: absolute;
+    left: 7%;
+    top: 11%;
+    padding: 6px;
+    height: 27px;
+    width: 50px;
+    font-size: smaller;
+}
+#aumentar1{
+    border: solid black 1px;
+    position: absolute;
+    top: 20%;
+    left: 40%;
+    width: 15px;
+    height: auto;
+    font-size: x-small;
+}
+#disminuir1{
+    border: solid black 1px;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    width: 15px;
+    height: auto;
+    font-size: x-small;
+}
+
+#centrardiv2{
+    position:absolute;
+    top: 537px;
+    width: 180px;
+    height: 40px;
+    left: 24.5%;
+
+}
+#jugar2{
+    position: absolute;
+    left: 66%;
+    top: 11%;
+    font-size: x-small;
+    padding: 6px;
+    padding-bottom: 5px;
+    border: solid black 1px;
+}
+#cantidad-maq-2{
+    position: absolute;
+    left: 7%;
+    top: 11%;
+    padding: 6px;
+    height: 27px;
+    width: 50px;
+    font-size: smaller;
+}
+#aumentar2{
+    border: solid black 1px;
+    position: absolute;
+    top: 20%;
+    left: 40%;
+    width: 15px;
+    height: auto;
+    font-size: x-small;
+}
+#disminuir2{
+    border: solid black 1px;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    width: 15px;
+    height: auto;
+    font-size: x-small;
+}
 
 :root {
   --primary: #dc2626;
@@ -148,9 +238,6 @@ label.nombreTragamoneda {
 .moneda_img:nth-child(8){
     left:6%; animation-duration: 2s; animation-delay: 3s;
 }
-.btaumentar{
-    transform: rotate(180deg);
-}
 
 @keyframes monedas{
     0%{
@@ -181,7 +268,7 @@ label.nombreTragamoneda {
     animation: animacion 4s linear infinite;
 }
 
-/*@keyframes animacion {
+@keyframes animacion {
     0%{
         color: white;
     }
@@ -196,7 +283,7 @@ label.nombreTragamoneda {
         0 0 2000px #03bcf4;
     }
 }
-*/
+
 
 .nomMaquina2 h3{
     letter-spacing: 4px;
@@ -212,7 +299,7 @@ label.nombreTragamoneda {
 }
 
 
-/*@keyframes anima {
+@keyframes anima {
     0%{
         color: white;
     }
@@ -227,7 +314,7 @@ label.nombreTragamoneda {
         0 0 2000px #CD1B8B;
 
     }
-}*/
+}
 
 @media (max-width: 858px ){
     .nomMaquina1 h3{
