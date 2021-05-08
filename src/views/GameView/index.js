@@ -12,7 +12,7 @@ const GameView = () => {
 
     <div class="flex flex-wrap h-full">
       <div class="flex w-full h-1/2 items-center border-black border-4 justify-center">
-        <img class="h-4/5" src="/public/maq-celeste.png">
+        <img class="h-4/5" src="maq-celeste.png">
         <div id="centrardiv" class="">
           <input id ='cantidad-maq-1' class="text-black w-16 h-10 border-blue-500 bg-white rounded-md border-2" type="text" value="10">
           <button id = 'jugar1' class="rounded-md bg-blue-500 text-white"><b>Apostar</b></button>
@@ -21,7 +21,7 @@ const GameView = () => {
         </div>
       </div>
       <div class="flex justify-center items-center w-full h-1/2 border-black border-4">
-        <img class="h-4/5" src="/public/maq-rosa.png" >
+        <img class="h-4/5" src="maq-rosa.png" >
         <div id="centrardiv2" class="">
           <input id ='cantidad-maq-2' class="text-black w-16 h-10 border-pink-500 bg-white rounded-md border-2" type="text" value="10">
           <button id = 'jugar2' class="rounded-md bg-pink-500 text-white"><b>Apostar</b></button>
