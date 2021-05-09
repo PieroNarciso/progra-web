@@ -1,3 +1,5 @@
+import store from '../../store';
+
 /**
   * @typedef {Object} Props
   * @property {string} username
@@ -44,8 +46,9 @@ export const PopupEvents = (viewElement) => {
   const joinGame = (event) => {
     event.preventDefault();
     const inputValue = viewElement.querySelector('#username-input').value;
-    localStorage.setItem('firstTime', false);
     document.querySelector('#header-title').textContent = inputValue;
+    store.store.changeUsername(inputValue);
+    localStorage.setItem('firstTime', true);
     window.location.hash = '#/';
   }
   viewElement.querySelector('#username-input').select();

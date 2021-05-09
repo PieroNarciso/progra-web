@@ -1,21 +1,15 @@
 import Popup, { PopupEvents } from '../Popup';
-import ChangeName, { ChangeNameEvents } from '../ChangeName';
 import MainPage from '../../views/MainPage';
 import GameView, {GameViewEvents} from '../../views/GameView';
 import RankingView from '../../views/RankingView';
 import InstruccionesView from '../Instrucciones/Index';
 
+import { pickRandName } from '../../utils';
+
 
 /**
  * @param {HTMLDivElement} viewElement
  */
-
-var randomNames = ['Crow', 'Dog', 'Raindeer', 'Budgie', 'Lemur', 'Gorilla', 'Sheep']
-function pickRandName() {
-  var randomNumber = Math.floor(Math.random() * randomNames.length)
-  return randomNumber
-}
-
 const Router = (viewElement) => {
   const { hash } = window.location;
 
@@ -26,7 +20,7 @@ const Router = (viewElement) => {
   if (firsTime === null || firsTime === false) {
     window.location.hash = '#'
     viewElement.className = 'flex items-center justify-center';
-    viewElement.innerHTML = Popup({ username: randomNames[pickRandName()] });
+    viewElement.innerHTML = Popup({ username: pickRandName() });
     PopupEvents(viewElement);
     return;
   }
