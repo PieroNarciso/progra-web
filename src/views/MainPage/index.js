@@ -1,13 +1,29 @@
+import Ranking from '../../components/Ranking';
+
 const MainPage = () => {
-  return `
+  const template = `
   <div class="flex flex-col gap-4 mx-4 justify-center w-full"> 
     <a class="btn btn-primary" href="/#/juego">Jugar</a>
-    <a class="btn btn-secondary" href="/#/ranking">Ranking</a>
+    <button class="btn btn-secondary" id="open-ranking">Ranking</button>
     <a class="btn btn-secondary" href="/#/instrucciones">Instrucciones</a>
-    <a class="btn btn-secondary" href="/#/music">M&uacute;sica</a>
-    <a class="btn btn-secondary" href="/#/acerca-de">Acerca De</a>
+    <button class="btn btn-secondary" id="open-acerca-de">Acerca De</button>
   </div>
   `;
+
+  const containerDiv = document.createElement('div');
+  containerDiv.innerHTML = template;
+
+  containerDiv.querySelector('#open-ranking').addEventListener('click', () => {
+    document.body.appendChild(Ranking());
+  });
+
+  containerDiv
+    .querySelector('#open-acerca-de')
+    .addEventListener('click', () => {
+      console.log('Open acerca de');
+    });
+
+  return containerDiv;
 };
 
 export default MainPage;

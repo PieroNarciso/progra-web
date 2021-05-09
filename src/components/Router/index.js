@@ -1,7 +1,6 @@
 import Popup, { PopupEvents } from '../Popup';
 import MainPage from '../../views/MainPage';
 import GameView, {GameViewEvents} from '../../views/GameView';
-import RankingView from '../../views/RankingView';
 import InstruccionesView from '../Instrucciones/Index';
 
 import { pickRandName } from '../../utils';
@@ -25,17 +24,16 @@ const Router = (viewElement) => {
     return;
   }
 
+  viewElement.innerHTML = '';
+
   // Router logic
   if (!hash || hash === '#/' || hash === '#') {
-    viewElement.className = 'flex justify-center';
-    viewElement.innerHTML = MainPage();
+    viewElement.className = 'flex justify-center items-center';
+    viewElement.appendChild(MainPage())
   } else if (hash === '#/juego') {
     viewElement.style.backgroundImage = 'url("casino.png")';
     viewElement.innerHTML = GameView();
     GameViewEvents(viewElement);
-  } else if (hash === '#/ranking') {
-    viewElement.className = 'flex justify-center py-6'
-    viewElement.innerHTML = RankingView();
   } else if (hash === '#/instrucciones') {
     viewElement.className="flex justyfy-center"
     viewElement.innerHTML = InstruccionesView();
