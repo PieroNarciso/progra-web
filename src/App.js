@@ -1,6 +1,5 @@
 import Navbar from './components/Navbar';
 import VolumeControl from './components/VolumeControl';
-import ChangeName from './components/ChangeName';
 
 import Router from './components/Router';
 
@@ -21,14 +20,6 @@ const App = () => {
   viewRoot.id = 'view';
   root.appendChild(Navbar());
   root.appendChild(VolumeControl());
-
-  /**
-   * Abrir el componente para cambiar el nombre cuando se da click en el
-   * nombre del usuario
-   */
-  root.querySelector('#header-title').addEventListener('click', () => {
-    root.appendChild(ChangeName());
-  });
 
   /** Resive View */
   resiveViewHeight();

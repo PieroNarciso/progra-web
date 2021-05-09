@@ -1,4 +1,7 @@
 import store from '../../store';
+import ChangeName from '../ChangeName';
+import Ranking from '../Ranking';
+import AcercaDe from '../AcercaDe';
 
 /**
  * @param {string} username
@@ -8,9 +11,8 @@ const render = () => {
     <nav
       class="bg-primary px-2 py-2 flex justify-between w-full items-center z-50"
     >
-      <a id="header-title" class="text-lg text-white font-medium" href="#"
-    >CASTLE KING</a
-      >
+      <h1 id="header-title" class="text-lg text-white font-medium cursor-pointer"
+    >CASTLE KING</h1>
       <div class="flex items-center">
         <div class="inline-block mr-2 flex items-center">
           <span class="text-white mr-1 cursor-default">200.00</span>
@@ -41,9 +43,9 @@ const render = () => {
       >
         <a class="nav" href="/#">Home</a>
         <a class="nav" href="/#/juego">Jugar</a>
-        <a class="nav" href="/#/ranking">Ranking</a>
+        <button class="nav w-full" id="open-ranking">Ranking</button>
         <a class="nav" href="/#/instrucciones">Instrucciones</a>
-        <a class="nav" href="/#/acerca-de">Acerca De</a>
+        <button class="nav w-full" id="open-acerca-de">Acerca De</button>
       </div>
     </nav>
   `;
@@ -93,6 +95,19 @@ const Navbar = () => {
   if (username) {
     navBar.querySelector('#header-title').textContent = username
   }
+
+  /**
+    * Abrir emergentes
+    */
+  navBar.querySelector('#header-title').addEventListener('click', () => {
+    document.body.appendChild(ChangeName());
+  });
+  navBar.querySelector('#open-ranking').addEventListener('click', () => {
+    document.body.appendChild(Ranking());
+  });
+  navBar.querySelector('#open-acerca-de').addEventListener('click', () => {
+    document.body.appendChild(AcercaDe());
+  });
 
   navBar.querySelectorAll('.nav').forEach((node) => {
     node.addEventListener('click', toggleMenuBar);

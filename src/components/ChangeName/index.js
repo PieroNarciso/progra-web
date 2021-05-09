@@ -19,7 +19,8 @@ const ChangeName = () => {
           </label>
         </div>
         <div class="flex justify-end mt-4">
-          <button class="btn btn-primary w-auto">Change</button>
+          <button class="btn btn-secondary w-auto mr-2" id="close-change-name">Cancelar</button>
+          <button class="btn btn-primary w-auto">Cambiar</button>
         </div>
       </form> 
     </div>
@@ -39,6 +40,10 @@ const ChangeName = () => {
     document.querySelector('#header-title').textContent = username;
     containerElement.remove();
   }
+
+  containerElement.querySelector('#close-change-name').addEventListener('click', () => {
+    containerElement.remove();
+  });
 
   containerElement.querySelector('#change-name-form').addEventListener('submit', changeName);
 

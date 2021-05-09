@@ -1,4 +1,5 @@
 import Ranking from '../../components/Ranking';
+import AcercaDe from '../../components/AcercaDe';
 
 const MainPage = () => {
   const template = `
@@ -20,7 +21,7 @@ const MainPage = () => {
   containerDiv
     .querySelector('#open-acerca-de')
     .addEventListener('click', () => {
-      console.log('Open acerca de');
+      document.body.appendChild(AcercaDe());
     });
 
   return containerDiv;
