@@ -55,6 +55,6 @@ export class State {
     * @param {string} username
     */
   changeUsername(username) {
-    this.user.changeUsername(username);
+    this.user.__changeUsername(username);
   }
 }

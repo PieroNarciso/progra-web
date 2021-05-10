@@ -10,7 +10,7 @@ export class User {
     * @param {MetaData} data
    */
   constructor(username, coins = 200, data = []) {
-    this.username = username || 'Leon';
+    this.username = username || null;
     this.coins = coins;
     this.metadata = data;
   }
