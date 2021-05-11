@@ -2,13 +2,14 @@ import store from '../../store'
 import  * as pokemon from '../../utils/tragamonedas';
 const GameView = () => {
   return /*html*/`
-    <!--<div class="nomMaquina1 text-white">
-      <h3 class>YOUR FORTUNE</h3>
+
+    <div class="nomMaquina1">
+      <h3 class="text-white">YOUR FORTUNE</h3>
     </div>
-    </div>
-    <div class="nomMaquina2 text-white">
+
+    <div class="nomMaquina2">
       <h3 class=>CRAZY MACHINE</h3>
-    </div> -->
+    </div>
 
     <div class="flex flex-wrap h-full">
       <div class="flex w-full h-1/2 items-center border-black border-4 justify-center">
@@ -29,6 +30,9 @@ const GameView = () => {
           <button id="aumentar1" class="transform rotate-180 bg-blue-500 text-xs"><b>v</b></button>
           <button id="disminuir1" class="bg-blue-500 text-xs"><b>v</b></button>
         </div>
+        <div id="imgePirata" class="">
+          <img class=" h-10" src="pirata.png">
+        </div>
       </div>
       <div class="flex justify-center items-center w-full h-1/2 border-black border-4">
         <img class="h-4/5" src="maq-rosa.png" >
@@ -48,6 +52,9 @@ const GameView = () => {
           <button id="aumentar2" class="transform rotate-180 bg-pink-500 text-xs"><b>v</b></button>
           <button id="disminuir2" class="bg-pink-500 text-xs"><b>v</b></button>
         </div>
+        <div id="imgeEgip" class="">
+          <img class=" h-11" src="Egipto.png">
+        </div>
       </div>
     </div>
     
@@ -61,7 +68,7 @@ const GameView = () => {
       </div>
     </div> -->
 
-    <!--
+    
     <div class="monedas">
       <div class="moneda_img"><img src="/moneda.png" /></div>
       <div class="moneda_img"><img src="/moneda.png" /></div>
@@ -70,7 +77,7 @@ const GameView = () => {
       <div class="moneda_img"><img src="/moneda.png" /></div>
       <div class="moneda_img"><img src="/moneda.png" /></div>
       <div class="moneda_img"><img src="/moneda.png" /></div>
-    </div>-->
+    </div>
   `;
 };
 

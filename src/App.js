@@ -18,8 +18,8 @@ const App = () => {
 
   const viewRoot = document.createElement('div');
   viewRoot.id = 'view';
-  root.appendChild(Navbar({ username: 'Leon' }));
-  root.appendChild(VolumeControl({ volume: true }));
+  root.appendChild(Navbar());
+  root.appendChild(VolumeControl());
 
   /** Resive View */
   resiveViewHeight();

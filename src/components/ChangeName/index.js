@@ -1,13 +1,17 @@
+import store from '../../store';
+
 /**
   * @typedef {Object} Props
   * @property {string} username
   *
   * @param {Props} props
   */
-const ChangeName = ({ username }) => {
-  return `
-    <div class="">
-      <form id="change-name-form" class="shadow-md px-4 py-3 flex flex-col">
+const ChangeName = () => {
+  const { username } = store.getStore().user;
+
+  const template = `
+    <div class="absolute top-0 left-0 flex items-center justify-center w-screen h-screen bg-black bg-opacity-20">
+      <form id="change-name-form" class="shadow-md px-4 py-3 flex flex-col bg-white rounded-md">
         <div>
           <label class="">
             <span class="block text-gray-700">Username</span>
@@ -15,28 +19,35 @@ const ChangeName = ({ username }) => {
           </label>
         </div>
         <div class="flex justify-end mt-4">
-          <button class="btn btn-primary w-auto">Change</button>
+          <button class="btn btn-secondary w-auto mr-2" id="close-change-name">Cancelar</button>
+          <button class="btn btn-primary w-auto">Cambiar</button>
         </div>
       </form> 
     </div>
   `;
-};
 
-export default ChangeName;
+  const containerElement = document.createElement('div');
+  containerElement.innerHTML = template;
 
-/**
-  * @param {HTMLDivElement} element
-  */
-export const ChangeNameEvents = (element) => {
-  
   /**
     * @param {Event} event
     */
   const changeName = (event) => {
     event.preventDefault();
-    const username = element.querySelector('#user-input').value;
-    console.log(username);
+    const username = containerElement.querySelector('#user-input').value;
+    const state = store.getStore();
+    state.changeUsername(username);
+    document.querySelector('#header-title').textContent = username;
+    containerElement.remove();
   }
 
-  element.querySelector('#change-name-form').addEventListener('submit', changeName);
-}
+  containerElement.querySelector('#close-change-name').addEventListener('click', () => {
+    containerElement.remove();
+  });
+
+  containerElement.querySelector('#change-name-form').addEventListener('submit', changeName);
+
+  return containerElement;
+};
+
+export default ChangeName;

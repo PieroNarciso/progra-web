@@ -1,3 +1,5 @@
+import store from '../../store';
+
 const volumeMuted = `
   <path
     fill="currentColor"
@@ -12,34 +14,27 @@ const volumeHigh = `
   />
 `;
 
-/**
- * @typedef {Object} Props
- * @property {boolean} muted
- *
- * @param {Props} props
- */
-const VolumeControl = ({ volume }) => {
+const VolumeControl = () => {
+  const state = store.getStore()
 
   /**
     * @param {boolean} muted
     */
-  const render = (volume) => {
+  const render = (music) => {
     return `
       <svg class="w-8 h-8 text-gray-500" viewBox="0 0 24 24">
-        ${volume ? volumeHigh : volumeMuted}
+        ${music ? volumeHigh : volumeMuted}
       </svg>
     `
   }
 
   const btnElement = document.createElement('button');
   btnElement.className = 'fixed right-3 bottom-2 focus:outline-none';
-  btnElement.innerHTML = render(volume);
-  localStorage.setItem('volume', true);
+  btnElement.innerHTML = render(state.music);
 
   btnElement.addEventListener('click', () => {
-    const volumeState = JSON.parse(localStorage.getItem('volume'));
-    btnElement.innerHTML = render(!volumeState);
-    localStorage.setItem('volume', !volumeState);
+    state.toogleMusic();
+    btnElement.innerHTML = render(state.music);
   });
 
 
