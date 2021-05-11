@@ -15,7 +15,7 @@ const render = () => {
     >CASTLE KING</h1>
       <div class="flex items-center">
         <div class="inline-block mr-2 flex items-center">
-          <span class="text-white mr-1 cursor-default">200.00</span>
+          <span id="coins-val" class="text-white mr-1 cursor-default">200.00</span>
           <svg class=" w-6 h-6 text-yellow-400" viewBox="0 0 24 24">
             <path
               fill="currentColor"
@@ -126,6 +126,14 @@ export const changeNavBarTitle = (title) => {
   document.querySelector('#header-title').textContent = title
     ? title
     : 'CASTLE KING';
+}
+
+
+/**
+  * @param {number} val
+  */
+export const changeCoins = (val) => {
+  document.querySelector('#coins-val').textContent = val.toFixed(2);
 }
 
 export default Navbar;
