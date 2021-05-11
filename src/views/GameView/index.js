@@ -1,5 +1,6 @@
 import store from '../../store'
-import  * as pokemon from '../../utils/tragamonedas';
+import  {apostarYJugar} from '../../utils/tragamonedas';
+import {changeCoins} from '../../components/Navbar';
 const GameView = () => {
   return /*html*/`
 
@@ -176,13 +177,31 @@ export const GameViewEvents = (viewElement) => {
       else bloquearBotones(0, num);
     }
   }
-
-  const owo = (nu) =>{
+  let botona= viewElement.querySelector("#jugar1");
+  let botonb= viewElement.querySelector("#jugar2");
+  let cobrara= viewElement.querySelector("#jugar4");
+  let cobrarb= viewElement.querySelector("#jugar3");
+  let apt=0;
+  const oprimirapostar = (nu) =>{
     const inputTxt1 = viewElement.querySelector("#cantidad-maq-".concat(nu));
     if( user.coins> inputTxt1.value){
-      var apt = parseInt(inputTxt1.value);
-      user.coins=user.coins - apt;
-      moverLetra(apt,nu)
+      if(nu==1){
+        botona.disabled=true;
+        botona.classList.replace('bg-blue-500', 'bg-gray-500')
+        apt = parseInt(inputTxt1.value);
+        user.coins=user.coins - apt;
+        changeCoins(user.coins);
+        moverLetra(apt,nu)
+      }
+      if(nu==2){
+        botonb.disabled=true;
+        botonb.classList.replace('bg-pink-500', 'bg-gray-500')
+        apt = parseInt(inputTxt1.value);
+        user.coins=user.coins - apt;
+        changeCoins(user.coins);
+        moverLetra(apt,nu)
+      }
+
     }
 
   }
@@ -190,7 +209,6 @@ export const GameViewEvents = (viewElement) => {
 
   let gananciaa=0;
   let gananciab=0;
-  let apt=0;
   let inte= {};
   viewElement.querySelector('#aumentar1').addEventListener('click', () => aumentarMonedas(1));
   viewElement.querySelector('#disminuir1').addEventListener('click', () => disminuirMonedas(1));
@@ -198,17 +216,14 @@ export const GameViewEvents = (viewElement) => {
   viewElement.querySelector('#disminuir2').addEventListener('click', () => disminuirMonedas(2));
   viewElement.querySelector('#cantidad-maq-1').addEventListener('change', () => revisar);
   viewElement.querySelector('#cantidad-maq-2').addEventListener('change', () => revisar);
-  viewElement.querySelector('#jugar1').addEventListener('click', () => owo(1));
-  viewElement.querySelector('#jugar2').addEventListener('click', () => owo(2));
-  viewElement.querySelector('#jugar4').addEventListener('click', ()=> cobrar(inte.ganancia,apt,1));
-  viewElement.querySelector('#jugar3').addEventListener('click', ()=> cobrar(inte.ganancia,apt,2));
+  viewElement.querySelector('#jugar1').addEventListener('click', () => oprimirapostar(1));
+  viewElement.querySelector('#jugar2').addEventListener('click', () => oprimirapostar(2));
+  viewElement.querySelector('#jugar4').addEventListener('click', ()=> cobrar(gananciaa,gananciab,apt,1));
+  viewElement.querySelector('#jugar3').addEventListener('click', ()=> cobrar(gananciaa,gananciab,apt,2));
 
   let contador=0;
   let contador2=0;
-  let botona= viewElement.querySelector("#jugar1");
-  let botonb= viewElement.querySelector("#jugar2");
-  let cobrara= viewElement.querySelector("#jugar4");
-  let cobrarb= viewElement.querySelector("#jugar3");
+
 
   let lina=viewElement.querySelector("#lin1")
   let linb=viewElement.querySelector("#lin2")
@@ -217,7 +232,6 @@ export const GameViewEvents = (viewElement) => {
   let zonac=viewElement.querySelector("#letra2");
   let zonad=viewElement.querySelector("#letra2-1");
   var array=["J.png","A.png","K.png"]
-  let vez= 1;
   function calculo(inte,nu){
     if(nu === 1){
         var intervalo= setInterval(() =>{ 
@@ -239,7 +253,7 @@ export const GameViewEvents = (viewElement) => {
         }
       
         },100);
-        console.log(contador2, inte.resultado);
+    
         var intervalo2= setInterval(() =>{ 
         contador2++
         var Index2= Math.floor(Math.random()*array.length)
@@ -281,7 +295,6 @@ export const GameViewEvents = (viewElement) => {
         }
       
         },100);
-        console.log(contador2, inte.resultado);
         var intervalo2= setInterval(() =>{ 
         contador2++
         var Index2= Math.floor(Math.random()*array.length)
@@ -309,12 +322,13 @@ export const GameViewEvents = (viewElement) => {
   
   function moverLetra(apt,nu){
     if(nu==1){
-      inte= pokemon.apostarYJugar("maquinaA[maquinaA]",apt)
+      inte= apostarYJugar("maquinaA[maquinaA]",apt)
       calculo(inte,nu)
       gananciaa=parseInt(inte.ganancia)
       setTimeout(() => {
         if(gananciaa == 0){
-  
+          botona.disabled=false;
+          botona.classList.replace("bg-gray-500","bg-blue-500");
         }
         if(gananciaa != 0){
           lina.classList.toggle("hidden")
@@ -329,12 +343,13 @@ export const GameViewEvents = (viewElement) => {
       
     }
     if(nu==2){
-      inte= pokemon.apostarYJugar("maquinaB[maquinaB]",apt)
+      inte= apostarYJugar("maquinaB[maquinaB]",apt)
       calculo(inte,nu)
       gananciab=parseInt(inte.ganancia);
       setTimeout(() => {
         if(gananciab == 0){
-
+          botonb.disabled=false;
+          botonb.classList.replace("bg-gray-500","bg-pink-500");
         }
         if(gananciab != 0){
           linb.classList.toggle("hidden")
@@ -346,16 +361,25 @@ export const GameViewEvents = (viewElement) => {
       
     }
   }
-  function cobrar(ganancia,apt,nu){
-    user.coins+=ganancia*apt;
+  function cobrar(gananciaa,gananciab,apt,nu){
+    
+    
     if(nu==1){
+      user.coins=user.coins+(gananciaa*apt);
+      changeCoins(user.coins);
       botona.classList.remove("hidden")
+      botona.classList.replace("bg-gray-500","bg-blue-500");
+      botona.disabled=false;
       cobrara.classList.toggle("hidden")
       lina.classList.toggle("hidden")
     }
     
     if(nu==2){
+      user.coins=user.coins+(gananciab*apt);
+      changeCoins(user.coins);
       botonb.classList.remove("hidden")
+      botonb.classList.replace("bg-gray-500","bg-pink-500");
+      botonb.disabled=false;
       cobrarb.classList.toggle("hidden")
       linb.classList.toggle("hidden")
     }
