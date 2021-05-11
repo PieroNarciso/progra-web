@@ -8,7 +8,15 @@
     left: 24.5%;
 
 }
-
+#jugar4{
+    position: absolute;
+    left: 66%;
+    top: 11%;
+    font-size: x-small;
+    padding: 6px;
+    padding-bottom: 5px;
+    border: solid black 1px;
+}
 #jugar1{
     position: absolute;
     left: 66%;
@@ -46,6 +54,56 @@
     font-size: x-small;
 }
 
+#centrarlin1{
+    position:absolute;
+    top: 140px;
+    width: 150px;
+    height: 30px;
+    left: 28.5%;
+}
+#lin1{
+    position: absolute;
+    left: 30%;
+}
+#lin2{
+    position:absolute;
+    left:30%;
+}
+#imagen1-4{
+    position:absolute;
+    top: 168px;
+    width: 65px;
+    height: 65px;
+    left: 30%;
+}
+#centrarlin2{
+    position:absolute;
+    top: 438px;
+    width: 150px;
+    height: 30px;
+    left: 28.5%;
+}
+#imagen1-2{
+    position:absolute;
+    top: 168px;
+    width: 65px;
+    height: 65px;
+    left: 51%;
+}
+#imagen2-4{
+    position:absolute;
+    top: 466px;
+    width: 65px;
+    height: 65px;
+    left: 30%;
+}
+#imagen2-2{
+    position:absolute;
+    top: 466px;
+    width: 65px;
+    height: 65px;
+    left: 51%;
+}
 #centrardiv2{
     position:absolute;
     top: 537px;
@@ -55,6 +113,15 @@
 
 }
 #jugar2{
+    position: absolute;
+    left: 66%;
+    top: 11%;
+    font-size: x-small;
+    padding: 6px;
+    padding-bottom: 5px;
+    border: solid black 1px;
+}
+#jugar3{
     position: absolute;
     left: 66%;
     top: 11%;
