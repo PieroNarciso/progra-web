@@ -8,6 +8,8 @@ import AcercaDe from '../AcercaDe';
  */
 const render = () => {
   return `
+    <audio id="audiox" autoplay loop src="Glide-with-me.mp3" type="audio/mpeg">
+    </audio>
     <nav
       class="bg-primary px-2 py-2 flex justify-between w-full items-center z-50"
     >
@@ -58,6 +60,8 @@ const render = () => {
  * @param {Props} props
  */
 const Navbar = () => {
+
+  
   const { username } = store.getStore().user;
 
   /** toggle menu floating */
@@ -115,8 +119,10 @@ const Navbar = () => {
 
   /** Close option menu cuando se hace clic fuera */
   window.addEventListener('click', closeOptionMenu);
-
+  
   return navBar;
+
+  
 };
 
 /**

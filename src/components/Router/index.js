@@ -22,8 +22,13 @@ const Router = (viewElement) => {
     viewElement.innerHTML = Popup({ username: pickRandName() });
     PopupEvents(viewElement);
     return;
+  } else {
+    
   }
 
+  const audio = document.querySelector("#audiox");
+  audio.volume = 0.1;
+  audio.play();
   viewElement.innerHTML = '';
 
   // Router logic

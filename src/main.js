@@ -7,12 +7,12 @@ import { User } from './models/user';
 
 
 
-const isLoaded = store.load();
+const isLoaded = false;
 if (!isLoaded) {
   store.create(new State({
     user: new User(),
     users: [],
-    music: true,
+    music: false,
   }));
 }
 
