@@ -38,6 +38,8 @@ const ChangeName = () => {
     const state = store.getStore();
     state.changeUsername(username);
     document.querySelector('#header-title').textContent = username;
+    document.querySelector('#coins-val').textContent = state.user.coins.toFixed(2);
+    document.querySelector('#ganancia-val').textContent = state.user.acumGanancia.toFixed(2);
     containerElement.remove();
   }
 
