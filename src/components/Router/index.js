@@ -22,8 +22,6 @@ const Router = (viewElement) => {
     viewElement.innerHTML = Popup({ username: pickRandName() });
     PopupEvents(viewElement);
     return;
-  } else {
-    
   }
 
   const audio = document.querySelector("#audiox");
