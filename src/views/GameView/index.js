@@ -1,8 +1,8 @@
 import store from '../../store'
 import  {apostarYJugar} from '../../utils/tragamonedas';
-import {changeCoins} from '../../components/Navbar';
+import {increaseCoins, decreaseCoins} from '../../components/Navbar';
 const GameView = () => {
-  return /*html*/`
+  return /*html*/ `
 
     <div class="nomMaquina1">
       <h3 class="text-white">YOUR FORTUNE</h3>
@@ -25,8 +25,8 @@ const GameView = () => {
           <img class="w-15" src="A.png" id="letra1-1">
         </div>
         <div id="centrardiv" class="">
-          <input id ='cantidad-maq-1' class="text-black w-16 h-10 border-blue-500 bg-white rounded-md border-2" type="text" value="10">
-          <button id ='jugar1' class="rounded-md bg-blue-500 text-white"><b>Apostar</b></button>
+          <input id ='cantidad-maq-1' class="border-blue-500 text-black w-16 h-10  bg-white rounded-md border-2" type="text" value="10">
+          <button id = 'jugar1' class="rounded-md bg-blue-500 text-white"><b>Apostar</b></button>
           <button id ='jugar4' class="rounded-md bg-blue-500 text-white hidden"><b>Cobrar</b></button>
           <button id="aumentar1" class="transform rotate-180 bg-blue-500 text-xs"><b>v</b></button>
           <button id="disminuir1" class="bg-blue-500 text-xs"><b>v</b></button>
@@ -59,15 +59,7 @@ const GameView = () => {
       </div>
     </div>
     
-    <!--
-      <div class="pr-56">
-        <p class="absolute"> Cantidad a apostar: </p>
-        <input id="cantidad-maq-2" class="text-black absolute mt-8 py-2 px-4 w-16 h-10 border-pink-500 bg-white rounded-md border-2" type="text" value="10">
-        <button class="absolute mt-8 ml-32 py-2 px-4 rounded-md bg-pink-500"><b>Apostar</b></button>
-        <button id="aumentar2" class="transform rotate-180 absolute mt-8 ml-20 px-2 bg-pink-500 text-xs"><b>v</b></button>
-        <button id="disminuir2" class="absolute mt-14 ml-20 px-2 bg-pink-500 text-xs"><b>v</b></button>
-      </div>
-    </div> -->
+    </div>
 
     
     <div class="monedas">
@@ -86,31 +78,49 @@ const GameView = () => {
 
   
 /**
-  * @param {HTMLDivElement} viewElement
-  */
+ * @param {HTMLDivElement} viewElement
+ */
 export const GameViewEvents = (viewElement) => {
-  const { user } = store.getStore()
+  const { user, music } = store.getStore();
+
   const bloquearBotones = (tipo, nro) => {
     try {
       if (tipo == 0) {
         if (nro == 1) {
-          viewElement.querySelector('#aumentar1').classList.replace('bg-gray-400', 'bg-blue-500');
-          viewElement.querySelector('#aumentar1').disabled = false;
-          viewElement.querySelector('#disminuir1').classList.replace('bg-gray-400', 'bg-blue-500');
-          viewElement.querySelector('#disminuir1').disabled = false;
+          viewElement
+            .querySelector('#aumentar1')
+            .classList.replace('bg-gray-400', 'bg-blue-500');
+          viewElement
+            .querySelector('#disminuir1')
+            .classList.replace('bg-gray-400', 'bg-blue-500');
+          viewElement
+            .querySelector('#jugar'.concat(nro))
+            .classList.replace('bg-gray-400', 'bg-blue-500');
         } else if (nro == 2) {
-          viewElement.querySelector('#aumentar2').classList.replace('bg-gray-400', 'bg-pink-500');
-          viewElement.querySelector('#aumentar2').disabled = false;
-          viewElement.querySelector('#disminuir2').classList.replace('bg-gray-400', 'bg-pink-500');
-          viewElement.querySelector('#disminuir2').disabled = false;
+          viewElement
+            .querySelector('#aumentar2')
+            .classList.replace('bg-gray-400', 'bg-pink-500');
+          viewElement
+            .querySelector('#disminuir2')
+            .classList.replace('bg-gray-400', 'bg-pink-500');
+          viewElement
+            .querySelector('#jugar'.concat(nro))
+            .classList.replace('bg-gray-400', 'bg-pink-500');
         }
-      }
-      else if (tipo == 3){
-        if (nro == 1) {
-          
-        }
-      }
-      else {
+        viewElement.querySelector('#jugar'.concat(nro)).disabled = false;
+        viewElement.querySelector('#aumentar'.concat(nro)).disabled = false;
+        viewElement.querySelector('#disminuir'.concat(nro)).disabled = false;
+      } else if (tipo == 3) {
+        if (nro == 1)
+          viewElement
+            .querySelector('#jugar'.concat(nro))
+            .classList.replace('bg-blue-500', 'bg-gray-400');
+        else
+          viewElement
+            .querySelector('#jugar'.concat(nro))
+            .classList.replace('bg-pink-500', 'bg-gray-400');
+        viewElement.querySelector('#jugar'.concat(nro)).disabled = true;
+      } else {
         if (tipo == 1) {
           if (nro == 1) {
             var btn = viewElement.querySelector('#aumentar1');
@@ -119,8 +129,7 @@ export const GameViewEvents = (viewElement) => {
             var btn = viewElement.querySelector('#aumentar2');
             btn.classList.remove('bg-pink-500');
           }
-        }
-        else if (tipo == 2) {
+        } else if (tipo == 2) {
           if (nro == 1) {
             var btn = viewElement.querySelector('#disminuir1');
             btn.classList.remove('bg-blue-500');
@@ -129,52 +138,45 @@ export const GameViewEvents = (viewElement) => {
             btn.classList.remove('bg-pink-500');
           }
         }
-        btn.classList.add('bg-gray-400')
+        btn.classList.add('bg-gray-400');
         btn.disabled = true;
       }
-    } catch { }
-  }
-
+    } catch {}
+  };
   const revisar = (num) => {
     const inputTxt = viewElement.querySelector('#cantidad-maq-'.concat(num));
-
     if (inputTxt.value >= user.coins) {
-      if(inputTxt1.value > user.coins) bloquearBotones(3,1)
-      bloquearBotones(1, 1);
+      if (inputTxt.value > user.coins) bloquearBotones(3, num);
+      bloquearBotones(1, num);
     }
-    if (inputTxt2.value >= user.coins) {
-      bloquearBotones(1, 2);
-      console.log('h')
-    }
-    if (inputTxt1.value <= 0) {
-      bloquearBotones(2, 1);
-    }
-    if (inputTxt2.value <= 0) {
+    if (inputTxt.value <= 0) {
       bloquearBotones(2, 2);
+      bloquearBotones(3, num);
     }
-    if (inputTxt1.value > 0 && inputTxt1.value < user.coins) {
-      bloquearBotones(0,1);
+    if (inputTxt.value > 0 && inputTxt.value < user.coins) {
+      bloquearBotones(0, num);
     }
-    if (inputTxt2.value > 0 && inputTxt2.value < user.coins) {
-      bloquearBotones(0, 2);
-    }
-  }
-
+  };
   const aumentarMonedas = (num) => {
-    const nuevoMonto = parseInt(viewElement.querySelector('#cantidad-maq-'.concat(num)).value) + 10;
+    const nuevoMonto =
+      parseInt(viewElement.querySelector('#cantidad-maq-'.concat(num)).value) +
+      10;
     if (user.coins >= nuevoMonto) {
-      viewElement.querySelector('#cantidad-maq-' + num).value = nuevoMonto
+      viewElement.querySelector('#cantidad-maq-' + num).value = nuevoMonto;
       if (nuevoMonto >= user.coins) bloquearBotones(1, num);
       else bloquearBotones(0, num);
+      if (nuevoMonto == user.coins) bloquearBotones(3, num);
     }
-  }
-
+  };
   const disminuirMonedas = (num) => {
-    const nuevoMonto = parseInt(viewElement.querySelector('#cantidad-maq-'.concat(num)).value) - 10;
+    const nuevoMonto =
+      parseInt(viewElement.querySelector('#cantidad-maq-'.concat(num)).value) -
+      10;
     if (nuevoMonto >= 0) {
-      viewElement.querySelector('#cantidad-maq-' + num).value = nuevoMonto
+      viewElement.querySelector('#cantidad-maq-' + num).value = nuevoMonto;
       if (0 >= nuevoMonto) bloquearBotones(2, num);
       else bloquearBotones(0, num);
+      if (nuevoMonto == 0) bloquearBotones(3, num);
     }
   }
   let botona= viewElement.querySelector("#jugar1");
@@ -189,16 +191,14 @@ export const GameViewEvents = (viewElement) => {
         botona.disabled=true;
         botona.classList.replace('bg-blue-500', 'bg-gray-500')
         apt = parseInt(inputTxt1.value);
-        user.coins=user.coins - apt;
-        changeCoins(user.coins);
+        decreaseCoins(apt);
         moverLetra(apt,nu)
       }
       if(nu==2){
         botonb.disabled=true;
         botonb.classList.replace('bg-pink-500', 'bg-gray-500')
         apt = parseInt(inputTxt1.value);
-        user.coins=user.coins - apt;
-        changeCoins(user.coins);
+        decreaseCoins(apt);
         moverLetra(apt,nu)
       }
 
@@ -366,7 +366,7 @@ export const GameViewEvents = (viewElement) => {
     
     if(nu==1){
       user.coins=user.coins+(gananciaa*apt);
-      changeCoins(user.coins);
+      increaseCoins(gananciaa*apt);
       botona.classList.remove("hidden")
       botona.classList.replace("bg-gray-500","bg-blue-500");
       botona.disabled=false;
@@ -375,8 +375,7 @@ export const GameViewEvents = (viewElement) => {
     }
     
     if(nu==2){
-      user.coins=user.coins+(gananciab*apt);
-      changeCoins(user.coins);
+      increaseCoins(gananciab*apt);
       botonb.classList.remove("hidden")
       botonb.classList.replace("bg-gray-500","bg-pink-500");
       botonb.disabled=false;
@@ -385,7 +384,39 @@ export const GameViewEvents = (viewElement) => {
     }
   }
 
-}
+  const soloNumeros = (event) => {
+    event = event ? event : window.event;
+    var charCode = event.which ? event.which : event.keyCode;
+    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+      event.preventDefault();
+    }
+  };
+
+  viewElement
+    .querySelector('#aumentar1')
+    .addEventListener('click', () => aumentarMonedas(1));
+  viewElement
+    .querySelector('#disminuir1')
+    .addEventListener('click', () => disminuirMonedas(1));
+  viewElement
+    .querySelector('#aumentar2')
+    .addEventListener('click', () => aumentarMonedas(2));
+  viewElement
+    .querySelector('#disminuir2')
+    .addEventListener('click', () => disminuirMonedas(2));
+  viewElement
+    .querySelector('#cantidad-maq-1')
+    .addEventListener('change', () => revisar(1));
+  viewElement
+    .querySelector('#cantidad-maq-2')
+    .addEventListener('change', () => revisar(2));
+  viewElement
+    .querySelector('#cantidad-maq-1')
+    .addEventListener('keypress', soloNumeros);
+  viewElement
+    .querySelector('#cantidad-maq-2')
+    .addEventListener('keypress', soloNumeros);
+};
 
 
 
