@@ -11,15 +11,32 @@ const render = () => {
     <nav
       class="bg-primary px-2 py-2 flex justify-between w-full items-center z-50"
     >
-      <h1 id="header-title" class="text-lg text-white font-medium cursor-pointer"
-    >CASTLE KING</h1>
+      <h1
+        id="header-title"
+        class="text-lg text-white font-medium cursor-pointer"
+      >
+        CASTLE KING
+      </h1>
       <div class="flex items-center">
         <div class="inline-block mr-2 flex items-center">
-          <span id="coins-val" class="text-white mr-1 cursor-default">200.00</span>
+          <span id="coins-val" class="text-white mr-1 cursor-default"
+            >200.00</span
+          >
           <svg class=" w-6 h-6 text-yellow-400" viewBox="0 0 24 24">
             <path
               fill="currentColor"
               d="M15 4A8 8 0 1 1 7 12A8 8 0 0 1 15 4M3 12A6 6 0 0 0 7 17.65V19.74A8 8 0 0 1 7 4.26V6.35A6 6 0 0 0 3 12Z"
+            />
+          </svg>
+        </div>
+        <div class="inline-block mr-2 flex items-center">
+          <span id="ganancia-val" class="text-white mr-1 cursor-default"
+            >0.00</span
+          >
+          <svg class=" w-6 h-6 text-yellow-400" viewBox="0 0 24 24">
+            <path
+              fill="currentColor"
+              d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z"
             />
           </svg>
         </div>
@@ -86,19 +103,18 @@ const Navbar = () => {
   const navBar = document.createElement('nav');
   navBar.innerHTML = render();
 
-
   navBar
     .querySelector('#option-button')
     .addEventListener('click', toggleMenuBar);
   const optionContainer = navBar.querySelector('#option-menu');
 
   if (username) {
-    navBar.querySelector('#header-title').textContent = username
+    navBar.querySelector('#header-title').textContent = username;
   }
 
   /**
-    * Abrir emergentes
-    */
+   * Abrir emergentes
+   */
   navBar.querySelector('#header-title').addEventListener('click', () => {
     document.body.appendChild(ChangeName());
   });
@@ -120,20 +136,37 @@ const Navbar = () => {
 };
 
 /**
-  * @param {string} title
-  */
+ * @param {string} title
+ */
 export const changeNavBarTitle = (title) => {
   document.querySelector('#header-title').textContent = title
     ? title
     : 'CASTLE KING';
-}
-
+};
 
 /**
-  * @param {number} val
-  */
-export const changeCoins = (val) => {
-  document.querySelector('#coins-val').textContent = val.toFixed(2);
-}
+ * Incrementa las monedas del usuario en `val` y renderiza las monedas actuales
+ * en el `Navbar` y la ganancia acumulada
+ *
+ * @param {number} val
+ */
+export const increaseCoins = (val) => {
+  const { user } = store.getStore();
+  user.increaseCoins(val);
+  document.querySelector('#coins-val').textContent = user.coins.toFixed(2);
+  document.querySelector('#ganancia-val').textContent = user.acumGanancia.toFixed(2);
+};
+
+/**
+ * Decrementa las monedas del usuario en `val` y renderiza las monedas
+ * actuales en el `Navbar`
+ *
+ * @param {number} val
+ */
+export const decreaseCoins = (val) => {
+  const { user } = store.getStore();
+  user.decreaseCoins(val);
+  document.querySelector('#coins-val').textContent = user.coins.toFixed(2);
+};
 
 export default Navbar;
