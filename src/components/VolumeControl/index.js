@@ -23,7 +23,7 @@ const VolumeControl = () => {
   const render = (music) => {
     return `
       <svg class="w-8 h-8 text-gray-500" viewBox="0 0 24 24">
-        ${music ? volumeHigh : volumeMuted}
+        ${music ? volumeMuted : volumeHigh}
       </svg>
     `
   }
@@ -35,6 +35,7 @@ const VolumeControl = () => {
   btnElement.addEventListener('click', () => {
     state.toogleMusic();
     btnElement.innerHTML = render(state.music);
+    
   });
 
 

@@ -32,6 +32,7 @@ const App = () => {
    */
   Router(viewRoot);
   window.addEventListener('hashchange', () => Router(viewRoot));
+
 };
 
 export default App;

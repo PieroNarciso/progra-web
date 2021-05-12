@@ -75,7 +75,7 @@ export function imprimirIntento(i, maquina, intento){
 }
 //JUEGO - INICIO ===============================
 var distribuciones = getDistributions()
-console.log(distribuciones)
+//console.log(distribuciones)
 //0.4 significa que tiene más probabilidades de ganar que 0.2
 var maquinas = {
     maquinaA: distribuciones[0],
@@ -89,7 +89,7 @@ var i = 1
 var maquina = 'maquinaA'
 var apuesta = 10
 var intento = apostarYJugar(maquinas[maquina]) 
-imprimirIntento(i, maquina, intento)
+//imprimirIntento(i, maquina, intento)
 
 //INTENTO 2
 //PRESIONAR EL BOTON DE UNA MAQUINA
@@ -97,7 +97,7 @@ var i = 2
 var maquina = 'maquinaB'
 var apuesta = 10
 var intento = apostarYJugar(maquinas[maquina]) 
-imprimirIntento(i, maquina, intento)
+//imprimirIntento(i, maquina, intento)
 
 //INTENTO 3
 //PRESIONAR EL BOTON DE UNA MAQUINA
@@ -105,7 +105,7 @@ var i = 3
 var maquina = 'maquinaB'
 var apuesta = 10
 var intento = apostarYJugar(maquinas[maquina]) 
-imprimirIntento(i, maquina, intento)
+//imprimirIntento(i, maquina, intento)
 
 //INTENTO 4
 //PRESIONAR EL BOTON DE UNA MAQUINA
@@ -113,7 +113,7 @@ var i = 4
 var maquina = 'maquinaA'
 var apuesta = 10
 var intento = apostarYJugar(maquinas[maquina]) 
-imprimirIntento(i, maquina, intento)
+//imprimirIntento(i, maquina, intento)
 
 //INTENTO N mientras se tenga monedas para apostar
 //PRESIONAR EL BOTON DE UNA MAQUINA
@@ -121,4 +121,4 @@ var i = 10
 var maquina = 'maquinaA'
 var apuesta = 10
 var intento = apostarYJugar(maquinas[maquina])
-imprimirIntento(i, maquina, intento)
+//imprimirIntento(i, maquina, intento)

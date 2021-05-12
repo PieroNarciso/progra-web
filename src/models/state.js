@@ -49,6 +49,9 @@ export class State {
 
   toogleMusic() {
     this.music = !this.music;
+    if (this.music) {
+      document.querySelector('#audiox').pause();
+    } else document.querySelector('#audiox').play();
   }
 
   /**
