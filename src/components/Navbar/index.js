@@ -2,6 +2,7 @@ import store from '../../store';
 import ChangeName from '../ChangeName';
 import Ranking from '../Ranking';
 import AcercaDe from '../AcercaDe';
+import Instrucciones from '../Instrucciones';
 
 /**
  * @param {string} username
@@ -63,7 +64,7 @@ const render = () => {
         <a class="nav" href="/#">Home</a>
         <a class="nav" href="/#/juego">Jugar</a>
         <button class="nav w-full" id="open-ranking">Ranking</button>
-        <a class="nav" href="/#/instrucciones">Instrucciones</a>
+        <button class="nav w-full" id="open-instrucciones">Instrucciones</button>
         <button class="nav w-full" id="open-acerca-de">Acerca De</button>
       </div>
     </nav>
@@ -127,6 +128,9 @@ const Navbar = () => {
   });
   navBar.querySelector('#open-acerca-de').addEventListener('click', () => {
     document.body.appendChild(AcercaDe());
+  });
+  navBar.querySelector('#open-instrucciones').addEventListener('click', () => {
+    document.body.appendChild(Instrucciones());
   });
 
   navBar.querySelectorAll('.nav').forEach((node) => {
