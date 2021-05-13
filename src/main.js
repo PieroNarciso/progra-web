@@ -7,7 +7,7 @@ import { User } from './models/user';
 
 
 
-const isLoaded = false;
+const isLoaded = store.load();
 if (!isLoaded) {
   store.create(new State({
     user: new User(),
