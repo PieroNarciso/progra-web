@@ -8,17 +8,35 @@ import AcercaDe from '../AcercaDe';
  */
 const render = () => {
   return `
-    <audio id="audiox" autoplay loop src="Glide-with-me.mp3" type="audio/mpeg">
-    </audio>
+    <audio
+      id="audiox"
+      autoplay
+      loop
+      src="Glide-with-me.mp3"
+      type="audio/mpeg"
+      class="hidden"
+    ></audio>
     <nav
       class="bg-primary px-2 py-2 flex justify-between w-full items-center z-50"
     >
-      <h1
-        id="header-title"
-        class="text-lg text-white font-medium cursor-pointer"
-      >
-        CASTLE KING
-      </h1>
+      <div class="flex items-center">
+        <h1
+          id="header-title"
+          class="text-lg text-white font-medium cursor-pointer"
+        >
+          CASTLE KING
+        </h1>
+        <svg
+          id="lapiz"
+          class="hidden ml-2 w-6 h-6 text-white"
+          viewBox="0 0 24 24"
+        >
+          <path
+            fill="currentColor"
+            d="M14.06,9L15,9.94L5.92,19H5V18.08L14.06,9M17.66,3C17.41,3 17.15,3.1 16.96,3.29L15.13,5.12L18.88,8.87L20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18.17,3.09 17.92,3 17.66,3M14.06,6.19L3,17.25V21H6.75L17.81,9.94L14.06,6.19Z"
+          />
+        </svg>
+      </div>
       <div class="flex items-center">
         <div class="inline-block mr-2 flex items-center">
           <span id="coins-val" class="text-white mr-1 cursor-default"
@@ -77,8 +95,6 @@ const render = () => {
  * @param {Props} props
  */
 const Navbar = () => {
-
-  
   const { username } = store.getStore().user;
 
   /** toggle menu floating */
@@ -117,6 +133,16 @@ const Navbar = () => {
   }
 
   /**
+   * Mostrar icono de lapiz al colocar el cursor por encima
+   */
+  navBar.querySelector('#header-title').addEventListener('mouseenter', () => {
+    navBar.querySelector('#lapiz').classList.remove('hidden');
+  });
+  navBar.querySelector('#header-title').addEventListener('mouseleave', () => {
+    navBar.querySelector('#lapiz').classList.add('hidden');
+  });
+
+  /**
    * Abrir emergentes
    */
   navBar.querySelector('#header-title').addEventListener('click', () => {
@@ -135,10 +161,8 @@ const Navbar = () => {
 
   /** Close option menu cuando se hace clic fuera */
   window.addEventListener('click', closeOptionMenu);
-  
-  return navBar;
 
-  
+  return navBar;
 };
 
 /**
@@ -160,7 +184,9 @@ export const increaseCoins = (val) => {
   const { user } = store.getStore();
   user.increaseCoins(val);
   document.querySelector('#coins-val').textContent = user.coins.toFixed(2);
-  document.querySelector('#ganancia-val').textContent = user.acumGanancia.toFixed(2);
+  document.querySelector(
+    '#ganancia-val'
+  ).textContent = user.acumGanancia.toFixed(2);
 };
 
 /**
