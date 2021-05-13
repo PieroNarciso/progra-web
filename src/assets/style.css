@@ -6,8 +6,7 @@
 }
 .apost{
     margin-top: 5px;
-
-
+}
 
 :root {
   --primary: #dc2626;
@@ -88,7 +87,6 @@
     text-align: center;
     font-size: 15pt;
     line-height: 11px;
-    animation: anima 4s linear infinite;
 }
 
 @keyframes anima {
@@ -98,7 +96,7 @@
     50%,100%{
 
         color: white;
-        text-shadow: 0 0 10px #00FFFF,
+        text-shadow: 0 0 10px #2ccc39,
         0 0 20px #00FFFF,
         0 0 40px #00FFFF,
         0 0 90px #00FFFF,
@@ -114,26 +112,10 @@
     text-align: center;
     font-size: 15pt;
     line-height: 11px;
-    animation: animac 4s linear infinite;
 }
 
 
-@keyframes animac {
-    0%{
-        color: white;
-    }
-    50%,100%{
 
-        color: white;
-        text-shadow: 0 0 10px #39ff14,
-        0 0 20px #39ff14,
-        0 0 40px #39ff14,
-        0 0 90px #39ff14,
-        0 0 1600px #39ff14,
-        0 0 2000px #39ff14;
-
-    }
-}
 
 @media (max-width: 858px ){
     .nomMaquina1 h3{
@@ -147,15 +129,16 @@
     }
 }
 
-#maq_celeste_Mov:hover{
+/*#maq_celeste_Mov:hover{
     transition: 1.2s;
     transform:scale(1.10);
+    transform:scale(0.9);
 
-}
+}*/
 
-#maq_rosa_Mov:hover {
+/*#maq_rosa_Mov:hover {
     transition: 1.2s;
     transform:scale(1.07);
-}
+}*/
 
 
