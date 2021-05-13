@@ -365,7 +365,6 @@ export const GameViewEvents = (viewElement) => {
     
     
     if(nu==1){
-      user.coins=user.coins+(gananciaa*apt);
       increaseCoins(gananciaa*apt);
       botona.classList.remove("hidden")
       botona.classList.replace("bg-gray-500","bg-blue-500");
