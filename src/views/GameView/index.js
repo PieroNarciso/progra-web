@@ -26,8 +26,8 @@ const GameView = () => {
       <div class="relative z-0 grid grid-rows-5 w-full h-1/2 items-center justify-center">
         <img id ='maq_rosa_Mov' class="h-4/5 row-start-1 row-end-6" src="maq-rosa.png" >
       </div>
-      <div class="absolute bottom-0 z-50 grid grid-rows-5 grid-cols-1 w-full h-1/2 items-center justify-items-center">
-        <div class="nomMaquina2 mt-28 z-20 ml-1 c">
+      <div class="absolute bottom-0 z-40 grid grid-rows-5 grid-cols-1 w-full h-1/2 items-center justify-items-center">
+        <div class="nomMaquina2 mt-28 z-20 ml-1 text-white">
           <h3 class=><p>CRAZY<br>MACHINE</p></h3>
         </div>
         <div id="imgeEgip" class="z-10 row-start-2 mb-7 ml-1">
@@ -43,10 +43,9 @@ const GameView = () => {
         </div>
       </div>
     </div>
-    
     </div>
 
-    
+    <audio id='sonido1' src="slot-machine-sound.mp3" type="audio/mpeg"></audio>
     <div class="monedas">
       <div class="moneda_img"><img src="/moneda.png" /></div>
       <div class="moneda_img"><img src="/moneda.png" /></div>
@@ -123,7 +122,7 @@ export const GameViewEvents = (viewElement) => {
         btn.classList.add('bg-gray-400');
         btn.disabled = true;
       }
-    } catch {}
+    } catch { }
   };
   const revisar = (num) => {
     const inputTxt = viewElement.querySelector('#cantidad-maq-'.concat(num));
@@ -168,6 +167,11 @@ export const GameViewEvents = (viewElement) => {
       event.preventDefault();
     }
   };
+  const sonidoBoton = () => {
+    const aud1 = viewElement.querySelector('#sonido1');
+    aud1.volume = 0.2;
+    aud1.play();
+  };
 
   viewElement
     .querySelector('#aumentar1')
@@ -193,6 +197,12 @@ export const GameViewEvents = (viewElement) => {
   viewElement
     .querySelector('#cantidad-maq-2')
     .addEventListener('keypress', soloNumeros);
+  viewElement
+    .querySelector('#jugar1')
+    .addEventListener('click', sonidoBoton);
+  viewElement
+    .querySelector('#jugar2')
+    .addEventListener('click', sonidoBoton);
 };
 
 export default GameView;

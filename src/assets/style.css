@@ -93,7 +93,7 @@
     animation: anima 4s linear infinite;
 }
 
-@keyframes anima {
+/*@keyframes anima {
     0%{
         color: white;
     }
@@ -107,7 +107,7 @@
         0 0 1600px #00FFFF,
         0 0 2000px #00FFFF;
     }
-}
+}*/
 
 
 .nomMaquina2 h3{
@@ -124,7 +124,7 @@
 }
 
 
-@keyframes animac {
+/*@keyframes animac {
     0%{
         color: white;
     }
@@ -139,7 +139,7 @@
         0 0 2000px #39ff14;
 
     }
-}
+}*/
 
 @media (max-width: 858px ){
     .nomMaquina1 h3{
