@@ -2,38 +2,44 @@ import store from '../../store';
 
 const GameView = () => {
   return /*html*/ `
-
-    <div class="nomMaquina1">
-      <h3 class="text-white">YOUR FORTUNE</h3>
-    </div>
-
-    <div class="nomMaquina2">
-      <h3 class=>CRAZY MACHINE</h3>
-    </div>
-
     <div class="flex flex-wrap h-full">
-      <div class="flex w-full h-1/2 items-center border-black border-4 justify-center">
-        <img id= 'maq_celeste_Mov' class="h-4/5 " src="maq-celeste.png">
-        <div id="centrardiv" class="">
-          <input id ='cantidad-maq-1' class="border-blue-500 text-black w-16 h-10 bg-white rounded-md border-2" type="text" value="10">
-          <button id = 'jugar1' class="rounded-md bg-blue-500 text-white"><b>Apostar</b></button>
-          <button id="aumentar1" class="transform rotate-180 bg-blue-500 text-xs"><b>v</b></button>
-          <button id="disminuir1" class="bg-blue-500 text-xs"><b>v</b></button>
-        </div>
-        <div id="imgePirata" class="">
-          <img class=" h-10" src="pirata.png">
-        </div>
+      <div class="relative z-0 grid grid-rows-5 w-full h-1/2 items-center justify-center">
+        <img id= 'maq_celeste_Mov' class="h-4/5 row-start-1 row-end-6" src="maq-celeste.png">
       </div>
-      <div class="flex justify-center items-center w-full h-1/2 border-black border-4">
-        <img id ='maq_rosa_Mov' class="h-4/5" src="maq-rosa.png" >
-        <div id="centrardiv2" class="">
-          <input id ='cantidad-maq-2' class="text-black w-16 h-10 border-pink-500 bg-white rounded-md border-2" type="text" value="10">
-          <button id = 'jugar2' class="rounded-md bg-pink-500 text-white"><b>Apostar</b></button>
-          <button id="aumentar2" class="transform rotate-180 bg-pink-500 text-xs"><b>v</b></button>
-          <button id="disminuir2" class="bg-pink-500 text-xs"><b>v</b></button>
+      <div class="absolute z-40 grid grid-rows-5 grid-cols-1 w-full h-1/2 items-center justify-items-center">
+          <div class="nomMaquina1 flex justify-center">
+           <h3 class="text-white mb-16 ml-1 z-40"><p>YOUR<br>FORTUNE</p></h3>
+          </div>
+          <div id="imgePirata" class="z-10 row-start-1 mt-14 ml-1">
+            <img class="h-10" src="pirata.png">
+          </div>
+          <input id ='cantidad-maq-1' class="row-start-3 row-end-4 border-white text-white w-12 h-5 mt-16 -ml-1 text-xs bg-black rounded-md border-2" type="text" value="10">
+          <div class="flex row-start-4 row-end-5 w-40 h-3/5 justify-around">
+            <button id = 'jugar1' class="apost px-2 py-0 botones rounded-md bg-blue-500 text-white text-xs h-6 border-black"><b>Apostar</b></button>
+            <div class = "flex p-1 pb-2 items-center h-full">
+              <button id="aumentar1" class="mr-1 botones p-1 pb-0 transform rotate-180 bg-blue-500 text-xs text-white"><b>v</b></button>
+              <button id="disminuir1" class="botones p-1 pt-0 bg-blue-500 text-xs text-white"><b>v</b></button>
+            </div>
+          </div>
+      </div>
+
+      <div class="relative z-0 grid grid-rows-5 w-full h-1/2 items-center justify-center">
+        <img id ='maq_rosa_Mov' class="h-4/5 row-start-1 row-end-6" src="maq-rosa.png" >
+      </div>
+      <div class="absolute bottom-0 z-50 grid grid-rows-5 grid-cols-1 w-full h-1/2 items-center justify-items-center">
+        <div class="nomMaquina2 mt-28 z-20 ml-1 c">
+          <h3 class=><p>CRAZY<br>MACHINE</p></h3>
         </div>
-        <div id="imgeEgip" class="">
-          <img class=" h-11" src="Egipto.png">
+        <div id="imgeEgip" class="z-10 row-start-2 mb-7 ml-1">
+          <img class="h-11" src="Egipto.png">
+        </div>
+        <input id ='cantidad-maq-2' class="row-start-3 row-end-4 border-white text-white w-12 h-5 mt-28 -ml-1 text-xs bg-black rounded-md border-2" type="text" value="10">
+        <div class="mt-11 flex row-start-4 row-end-5 w-40 h-3/5 justify-around">
+          <button id = 'jugar2' class="apost px-2 py-0 botones rounded-md bg-pink-500 text-white text-xs h-6 border-black"><b>Apostar</b></button>
+          <div class = "flex p-1 pb-2 items-center h-full">
+            <button id="aumentar2" class="mr-1 botones p-1 pb-0 transform rotate-180 bg-pink-500 text-xs text-white"><b>v</b></button>
+            <button id="disminuir2" class="botones p-1 pt-0 bg-pink-500 text-xs text-white"><b>v</b></button>
+          </div>
         </div>
       </div>
     </div>

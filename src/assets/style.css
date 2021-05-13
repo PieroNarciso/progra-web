@@ -1,94 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet');
 
-#centrardiv{
-    position:absolute;
-    top: 239px;
-    width: 180px;
-    height: 40px;
-    left: 24.5%;
-
+.botones{
+    border:solid black 1px
 }
-
-#jugar1{
-    position: absolute;
-    left: 66%;
-    top: 11%;
-    font-size: x-small;
-    padding: 6px;
-    padding-bottom: 5px;
-    border: solid black 1px;
-}
-#cantidad-maq-1{
-    position: absolute;
-    left: 7%;
-    top: 11%;
-    padding: 6px;
-    height: 27px;
-    width: 50px;
-    font-size: smaller;
-}
-#aumentar1{
-    border: solid black 1px;
-    position: absolute;
-    top: 20%;
-    left: 40%;
-    width: 15px;
-    height: auto;
-    font-size: x-small;
-}
-#disminuir1{
-    border: solid black 1px;
-    position: absolute;
-    top: 20%;
-    left: 50%;
-    width: 15px;
-    height: auto;
-    font-size: x-small;
-}
-
-#centrardiv2{
-    position:absolute;
-    top: 537px;
-    width: 180px;
-    height: 40px;
-    left: 24.5%;
-
-}
-#jugar2{
-    position: absolute;
-    left: 66%;
-    top: 11%;
-    font-size: x-small;
-    padding: 6px;
-    padding-bottom: 5px;
-    border: solid black 1px;
-}
-#cantidad-maq-2{
-    position: absolute;
-    left: 7%;
-    top: 11%;
-    padding: 6px;
-    height: 27px;
-    width: 50px;
-    font-size: smaller;
-}
-#aumentar2{
-    border: solid black 1px;
-    position: absolute;
-    top: 20%;
-    left: 40%;
-    width: 15px;
-    height: auto;
-    font-size: x-small;
-}
-#disminuir2{
-    border: solid black 1px;
-    position: absolute;
-    top: 20%;
-    left: 50%;
-    width: 15px;
-    height: auto;
-    font-size: x-small;
+.apost{
+    margin-top: 5px;
 }
 
 :root {
@@ -103,18 +19,6 @@
   --outline-none: 2px solid transparent;
   --shadow: 0 4px 6px -1px rgba(0, 0, 0, .1), 0 2px 4px -1px rgba(0, 0, 0, .06);
 
-}
-
-#imgePirata{
-    top: 85px;
-    left: 45.9%;
-    position: fixed;
-}
-
-#imgeEgip{
-    position: fixed;
-    top: 59.8%;
-    left: 45.4%;
 }
 
 /*Animacion de las monedas*/
@@ -181,11 +85,11 @@
     font-family: "Fredoka One";
     text-align: center;
     font-size: 15pt;
-    position: absolute;
+    /*position: absolute;
     left: 51%;
     top: 10%;
-    transform: translateX(-50%) translateY(-80%);
-    line-height: 0.30em;
+    transform: translateX(-50%) translateY(-80%);*/
+    line-height: 11px;
     animation: anima 4s linear infinite;
 }
 
@@ -211,11 +115,11 @@
     font-family: "Fredoka One";
     text-align: center;
     font-size: 15pt;
-    position: absolute;
+    /*position: absolute;
     left: 51%;
     top: 57%;
-    transform: translateX(-50%) translateY(-80%);
-    line-height: 0.30em;
+    transform: translateX(-50%) translateY(-80%);*/
+    line-height: 11px;
     animation: animac 4s linear infinite;
 }
 
