@@ -1,7 +1,7 @@
 import Popup, { PopupEvents } from '../Popup';
 import MainPage from '../../views/MainPage';
 import GameView, {GameViewEvents} from '../../views/GameView';
-import InstruccionesView from '../Instrucciones/Index';
+import InstruccionesView, {InstruccionesViewEvents} from '../Instrucciones/Index';
 
 import { pickRandName } from '../../utils';
 
@@ -40,6 +40,7 @@ const Router = (viewElement) => {
   } else if (hash === '#/instrucciones') {
     viewElement.className="flex justyfy-center"
     viewElement.innerHTML = InstruccionesView();
+    InstruccionesViewEvents(viewElement)
   } else if (hash === '#/acerca-de') {
     viewElement.innerHTML = `#/acerca-de`;
   } else {

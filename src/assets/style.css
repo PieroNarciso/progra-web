@@ -1,11 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet');
 
+
 .botones{
     border:solid black 1px
 }
 .apost{
     margin-top: 5px;
-}
+
+
 
 :root {
   --primary: #dc2626;
@@ -85,15 +87,11 @@
     font-family: "Fredoka One";
     text-align: center;
     font-size: 15pt;
-    /*position: absolute;
-    left: 51%;
-    top: 10%;
-    transform: translateX(-50%) translateY(-80%);*/
     line-height: 11px;
     animation: anima 4s linear infinite;
 }
 
-/*@keyframes anima {
+@keyframes anima {
     0%{
         color: white;
     }
@@ -107,7 +105,7 @@
         0 0 1600px #00FFFF,
         0 0 2000px #00FFFF;
     }
-}*/
+}
 
 
 .nomMaquina2 h3{
@@ -115,16 +113,12 @@
     font-family: "Fredoka One";
     text-align: center;
     font-size: 15pt;
-    /*position: absolute;
-    left: 51%;
-    top: 57%;
-    transform: translateX(-50%) translateY(-80%);*/
     line-height: 11px;
     animation: animac 4s linear infinite;
 }
 
 
-/*@keyframes animac {
+@keyframes animac {
     0%{
         color: white;
     }
@@ -139,7 +133,7 @@
         0 0 2000px #39ff14;
 
     }
-}*/
+}
 
 @media (max-width: 858px ){
     .nomMaquina1 h3{
