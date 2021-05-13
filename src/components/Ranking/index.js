@@ -66,7 +66,7 @@ const RankingView = () => {
     <div
       class="absolute top-0 left-0 bg-black bg-opacity-30 w-screen h-screen flex items-center justify-center"
     >
-      <div class="bg-white flex flex-col shadow-md rounded-lg h-4/5 w-auto">
+      <div class="bg-white flex flex-col shadow-md rounded-lg h-4/5 w-auto z-50">
       <div class="overflow-auto flex flex-col px-2 py-2 gap-y-3">
         ${rankingList
           .map((item, index) => RankingItem({ ...item, rank: index + 1 }))

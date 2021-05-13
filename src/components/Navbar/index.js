@@ -58,7 +58,7 @@ const render = () => {
 
       <div
         id="option-menu"
-        class="absolute right-1 top-1 bg-white rounded shadow-md hidden"
+        class="absolute right-1 top-1 bg-white rounded shadow-md hidden z-50"
       >
         <a class="nav" href="/#">Home</a>
         <a class="nav" href="/#/juego">Jugar</a>
