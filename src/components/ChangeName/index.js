@@ -10,7 +10,7 @@ const ChangeName = () => {
   const { username } = store.getStore().user;
 
   const template = `
-    <div class="absolute top-0 left-0 flex items-center justify-center w-screen h-screen bg-black bg-opacity-20">
+    <div class="absolute top-0 left-0 flex items-center justify-center w-screen h-screen bg-black bg-opacity-20 z-50">
       <form id="change-name-form" class="shadow-md px-4 py-3 flex flex-col bg-white rounded-md">
         <div>
           <label class="">

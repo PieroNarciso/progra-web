@@ -1,7 +1,6 @@
 import Popup, { PopupEvents } from '../Popup';
 import MainPage from '../../views/MainPage';
 import GameView, {GameViewEvents} from '../../views/GameView';
-import InstruccionesView, {InstruccionesViewEvents} from '../Instrucciones/Index';
 
 import { pickRandName } from '../../utils';
 
@@ -39,14 +38,10 @@ const Router = (viewElement) => {
     viewElement.style.backgroundImage = 'url("casino.png")';
     viewElement.innerHTML = GameView();
     GameViewEvents(viewElement);
-  } else if (hash === '#/instrucciones') {
-    viewElement.className="flex justyfy-center"
-    viewElement.innerHTML = InstruccionesView();
-    InstruccionesViewEvents(viewElement)
   } else if (hash === '#/acerca-de') {
     viewElement.innerHTML = `#/acerca-de`;
   } else {
-    viewElement.innerHTML = `Default`;
+    viewElement.innerHTML = `404 Not Found`;
   }
 };
 
