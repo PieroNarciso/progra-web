@@ -29,7 +29,7 @@ const VolumeControl = () => {
   }
 
   const btnElement = document.createElement('button');
-  btnElement.className = 'fixed right-3 bottom-2 focus:outline-none';
+  btnElement.className = 'fixed right-3 bottom-2 focus:outline-none z-40';
   btnElement.innerHTML = render(state.music);
 
   btnElement.addEventListener('click', () => {

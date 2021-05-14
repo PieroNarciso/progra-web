@@ -5,7 +5,13 @@ export class State {
    * @param {{ user: User, users: User[], music: boolean }} state
    */
   constructor({ user, users, music }) {
-    this.user = new User(user.username, user.coins, user.metadata);
+    this.user = new User(
+      user.username,
+      user.coins,
+      user.metadata,
+      user.acumGanancia,
+      user.ganancias
+    );
     this.users = users;
     this.music = music;
   }
@@ -31,9 +37,9 @@ export class State {
     const user = this.findUser(username);
     this.__addLoginUser();
     if (user) {
-      this.user = new User(user.username, user.coins, user.metadata)
+      this.user = new User(user.username, user.coins, user.metadata);
     } else {
-      this.user = new User(username)
+      this.user = new User(username);
     }
   }
 
@@ -55,8 +61,8 @@ export class State {
   }
 
   /**
-    * @param {string} username
-    */
+   * @param {string} username
+   */
   changeUsername(username) {
     this.user.__changeUsername(username);
   }
