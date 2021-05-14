@@ -25,9 +25,9 @@ const AcercaDe = () => {
   ];
 
   const template = `
-    <div class="bg-black absolute top-0 left-0 w-screen h-screen bg-opacity-30 flex items-center justify-center">
+    <div class="bg-black absolute top-0 left-0 w-screen h-screen bg-opacity-30 flex items-center justify-center z-50">
       <div class="overflow-hidden inline-flex flex-col rounded-xl shadow-md">
-        <div class="text-white bg-primary px-3 py-2 text-lg font-semibold">
+        <div class="text-white bg-primary px-3 py-2 text-lg font-semibold z-50">
           Acerca De
         </div>
         <div>
@@ -37,7 +37,7 @@ const AcercaDe = () => {
             })
             .join('')}
         </div>
-        <div class="flex justify-end px-3 py-1 border-t-2 border-primary bg-white">
+        <div class="flex justify-end px-3 py-1 border-t-2 border-primary bg-white z-50">
           <button class="btn btn-secondary w-auto" id="close-acerca-de">Cerrar</button>
         </div>
       </div>
