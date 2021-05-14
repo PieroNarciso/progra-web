@@ -8,10 +8,10 @@ import Instrucciones from '../Instrucciones';
  * @param {string} username
  */
 const render = () => {
+
   return `
     <audio
       id="audiox"
-      autoplay
       loop
       src="Glide-with-me.mp3"
       type="audio/mpeg"
