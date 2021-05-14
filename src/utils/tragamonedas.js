@@ -77,7 +77,7 @@ export function imprimirIntento(i, maquina, intento){
 var distribuciones = getDistributions()
 //console.log(distribuciones)
 //0.4 significa que tiene más probabilidades de ganar que 0.2
-var maquinas = {
+export const maquinas = {
     maquinaA: distribuciones[0],
     maquinaB: distribuciones[1]
 }

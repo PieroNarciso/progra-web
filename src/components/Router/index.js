@@ -25,7 +25,9 @@ const Router = (viewElement) => {
 
   const audio = document.querySelector("#audiox");
   audio.volume = 0.1;
-  audio.play();
+  try {
+    audio.play();
+  } catch { }
   viewElement.innerHTML = '';
 
   // Router logic
