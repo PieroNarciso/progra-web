@@ -5,22 +5,22 @@ const AcercaDe = () => {
     {
       name: 'Piero Narciso Ancalle',
       yearsOld: 23,
-      imgSrc: 'https://picsum.photos/200',
+      imgSrc: 'piero.jpg',
     },
     {
       name: 'Sebastian Felix Bañón',
       yearsOld: 19,
-      imgSrc: 'https://picsum.photos/200',
+      imgSrc: 'banon.jpg',
     },
     {
       name: 'Maricielo Jara Sosa',
       yearsOld: 20,
-      imgSrc: 'https://picsum.photos/200',
+      imgSrc: 'maricielo.jpg',
     },
     {
       name: 'Alessandra Nuñez Aguero',
       yearsOld: 20,
-      imgSrc: 'https://picsum.photos/200',
+      imgSrc: 'alessandra.jpg',
     },
   ];
 
