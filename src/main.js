@@ -12,7 +12,7 @@ if (!isLoaded) {
   store.create(new State({
     user: new User(),
     users: [],
-    music: false,
+    music: true,
   }));
 } else {
   
