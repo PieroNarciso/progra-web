@@ -35,7 +35,6 @@ const VolumeControl = () => {
   btnElement.addEventListener('click', () => {
     state.toogleMusic();
     btnElement.innerHTML = render(state.music);
-    
   });
 
 
