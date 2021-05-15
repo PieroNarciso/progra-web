@@ -57,7 +57,7 @@ const GameView = () => {
             <div class="flex items-center justify-evenly w-16">
               <img class="h-3"src="coins-g.png">
               <p class="text-white text-xs">Gan.:</p>
-              <p id="gan-maq-1" class="text-white text-xs">0<p>
+              <p id="gan-maq-2" class="text-white text-xs">0<p>
             </div>
           </div>
           <div class="mt-11 flex row-start-4 row-end-5 w-40 h-3/5 justify-around">
@@ -223,7 +223,8 @@ export const GameViewEvents = (viewElement) => {
     }
   }
 
-
+  var gananciaat=0;
+  var gananciabt=0;
   let gananciaa=0;
   let gananciab=0;
   let inte= {};
@@ -235,6 +236,8 @@ export const GameViewEvents = (viewElement) => {
   let zonab= viewElement.querySelector("#letra1-1")
   let zonac=viewElement.querySelector("#letra2");
   let zonad=viewElement.querySelector("#letra2-1");
+  let ganda=viewElement.querySelector("#gan-maq-1");
+  let gandb=viewElement.querySelector("#gan-maq-2");
   var array = ["J.png", "A.png", "K.png"]
   
   function calculo(inte,nu){
@@ -329,6 +332,7 @@ export const GameViewEvents = (viewElement) => {
       inte= apostarYJugar(maquinas['maquinaA'],apt)
       calculo(inte,nu)
       gananciaa=parseInt(inte.ganancia)
+      gananciaat+=parseInt(inte.ganancia*apt)
       setTimeout(() => {
         if(gananciaa == 0){
           botona.disabled=false;
@@ -347,6 +351,7 @@ export const GameViewEvents = (viewElement) => {
       inte = apostarYJugar(maquinas['maquinaB'],apt)
       calculo(inte,nu)
       gananciab=parseInt(inte.ganancia);
+      gananciabt+=parseInt(inte.ganancia*apt)
       setTimeout(() => {
         if(gananciab == 0){
           botonb.disabled=false;
@@ -366,6 +371,7 @@ export const GameViewEvents = (viewElement) => {
   function cobrar(gananciaa,gananciab,apt,nu){
     if(nu==1){
       increaseCoins(gananciaa*apt);
+      ganda.innerHTML=gananciaat.toString();
       botona.classList.remove("hidden")
       botona.classList.replace("bg-gray-400","bg-blue-500");
       botona.disabled=false;
@@ -375,6 +381,7 @@ export const GameViewEvents = (viewElement) => {
     
     if(nu==2){
       increaseCoins(gananciab*apt);
+      gandb.innerHTML=gananciabt.toString();
       botonb.classList.remove("hidden")
       botonb.classList.replace("bg-gray-400","bg-pink-500");
       botonb.disabled=false;
