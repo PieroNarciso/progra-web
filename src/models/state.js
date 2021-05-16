@@ -10,7 +10,8 @@ export class State {
       user.coins,
       user.metadata,
       user.acumGanancia,
-      user.ganancias
+      user.ganancias,
+      user.numApuestas
     );
     this.users = users;
     this.music = music;
@@ -24,20 +25,34 @@ export class State {
    */
   userExists(username) {
     const user = this.findUser(username);
-    if (user) return true;
+    if (user !== -1) return true;
     return false;
   }
 
+  /**
+   * @param {string} username
+   */
   findUser(username) {
-    const user = this.users.find((user) => user.username === username);
-    return user;
+    const userIdx = this.users.findIndex((user) => user.username === username);
+    if (userIdx === -1) return userIdx;
+    return this.users[userIdx];
   }
 
+  /**
+   * @param {string} username
+   */
   changeUsername(username) {
     const user = this.findUser(username);
     this.__addLoginUser();
-    if (user) {
-      this.user = new User(user.username, user.coins, user.metadata);
+    if (user !== -1) {
+      this.user = new User(
+        user.username,
+        user.coins,
+        user.metadata,
+        user.acumGanancia,
+        user.ganancias,
+        user.numApuestas
+      );
     } else {
       this.user = new User(username);
     }
@@ -48,9 +63,17 @@ export class State {
     this.__addLoginUser();
   }
 
+  /**
+   * Agrega usuario a la lista de usuarios ya loggeados
+   */
   __addLoginUser() {
-    if (!this.userExists(this.user.username)) {
+    if (!this.userExists(this.user.username) && this.user.username !== null) {
       this.users.push(this.user);
+    } else {
+      const userIdx = this.users.findIndex(
+        (userEl) => userEl.username == this.user.username
+      );
+      this.users[userIdx] = this.user;
     }
   }
 
@@ -59,12 +82,5 @@ export class State {
     if (this.music) {
       document.querySelector('#audiox').pause();
     } else document.querySelector('#audiox').play();
-  }
-
-  /**
-   * @param {string} username
-   */
-  changeUsername(username) {
-    this.user.__changeUsername(username);
   }
 }
