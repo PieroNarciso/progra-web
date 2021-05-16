@@ -111,7 +111,7 @@ const GameView = () => {
  * @param {HTMLDivElement} viewElement
  */
 export const GameViewEvents = (viewElement) => {
-  const { user, music } = store.getStore();
+  const state = store.getStore();
 
   const bloquearBotones = (tipo, nro) => {
     try {
@@ -175,8 +175,8 @@ export const GameViewEvents = (viewElement) => {
   };
   const revisar = (num) => {
     const inputTxt = viewElement.querySelector('#cantidad-maq-'.concat(num));
-    if (inputTxt.value >= user.coins) {
-      if (inputTxt.value > user.coins) {
+    if (inputTxt.value >= state.user.coins) {
+      if (inputTxt.value > state.user.coins) {
         bloquearBotones(3, num);
       }
       bloquearBotones(1, num);
@@ -185,7 +185,7 @@ export const GameViewEvents = (viewElement) => {
       bloquearBotones(2, 2);
       bloquearBotones(3, num);
     }
-    if (inputTxt.value > 0 && inputTxt.value < user.coins) {
+    if (inputTxt.value > 0 && inputTxt.value < state.user.coins) {
       bloquearBotones(0, num);
     }
   };
@@ -193,11 +193,11 @@ export const GameViewEvents = (viewElement) => {
     const nuevoMonto =
       parseInt(viewElement.querySelector('#cantidad-maq-'.concat(num)).value) +
       10;
-    if (user.coins >= nuevoMonto) {
+    if (state.user.coins >= nuevoMonto) {
       viewElement.querySelector('#cantidad-maq-' + num).value = nuevoMonto;
-      if (nuevoMonto >= user.coins) bloquearBotones(1, num);
+      if (nuevoMonto >= state.user.coins) bloquearBotones(1, num);
       else bloquearBotones(0, num);
-      if (nuevoMonto == user.coins) bloquearBotones(3, num);
+      if (nuevoMonto == state.user.coins) bloquearBotones(3, num);
     }
   };
   const disminuirMonedas = (num) => {
@@ -220,8 +220,8 @@ export const GameViewEvents = (viewElement) => {
   
   const oprimirapostar = (nu) => {
     const inputTxt1 = viewElement.querySelector("#cantidad-maq-".concat(nu));
-    if (user.coins >= inputTxt1.value) {
-      user.increaseNumApuestas();
+    if (state.user.coins >= inputTxt1.value) {
+      state.user.increaseNumApuestas();
       if (nu == 1) {
         botona.disabled = true;
         botona.classList.replace('bg-blue-500','bg-gray-400')
