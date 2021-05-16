@@ -3,7 +3,6 @@ import MainPage from '../../views/MainPage';
 import GameView, {GameViewEvents} from '../../views/GameView';
 
 import { pickRandName } from '../../utils';
-import store from '../../store';
 
 
 /**
@@ -13,7 +12,7 @@ const Router = (viewElement) => {
   const { hash } = window.location;
 
   viewElement.className = '';
-  viewElement.style.backgroundImage = '';
+  viewElement.style.backgroundImage = 'url("casino.png")';
 
   const firsTime = localStorage.getItem('firstTime');
   if (firsTime === null || firsTime === false) {

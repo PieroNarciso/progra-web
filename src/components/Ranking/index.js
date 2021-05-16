@@ -70,6 +70,7 @@ const RankingView = () => {
       userEl.avgGanancia = 0;
     }
   });
+  usersList = usersList.filter(e => e.username !== null);
   usersList = usersList.sort((a, b) => b.acumGanancia - a.acumGanancia);
 
   const template = `
