@@ -8,7 +8,7 @@ module.exports = {
       screens:{
         'gs5':{"raw": "(width: 640px) and (height:360px)"},
         'ipad':{"raw":"(width:768px) and (height:1024px)"},
-        'ipadland':'1024px',
+        'ipadland':{"raw":"(width: 1024px) and (height:768px)"},
       },
       colors: {
         primary: {
