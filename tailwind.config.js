@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       screens:{
-        'ipad':'768px',
+        'ipad':{"raw":"(width:768px) and (height:1024px)"},
         'ipadland':'1024px',
       },
       colors: {
