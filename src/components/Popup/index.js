@@ -50,10 +50,6 @@ export const PopupEvents = (viewElement) => {
     store.store.changeUsername(inputValue);
     localStorage.setItem('firstTime', true);
     window.location.hash = '#/';
-    /*const audio = document.querySelector("#audiox");
-    audio.volume = 0.1;
-    audio.play();
-    console.log('inicio');*/
   }
   viewElement.querySelector('#username-input').select();
   viewElement.querySelector('#popup-form').addEventListener('submit', joinGame);
