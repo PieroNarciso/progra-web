@@ -81,6 +81,9 @@ export class State {
     this.music = !this.music;
     if (this.music) {
       document.querySelector('#audiox').pause();
-    } else document.querySelector('#audiox').play();
+    } else {
+      document.querySelector('#audiox').play();
+      document.querySelector('#audiox').volume = 0.1;
+    }
   }
 }

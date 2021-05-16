@@ -6,7 +6,9 @@ module.exports = {
   theme: {
     extend: {
       screens:{
-        'gs5':{"raw": "(min-width: 640px) and (height:360px)"},
+        'gs5':{"raw": "(width: 640px) and (height:360px)"},
+        'ipad':{"raw":"(width:768px) and (height:1024px)"},
+        'ipadland':'1024px',
       },
       colors: {
         primary: {
