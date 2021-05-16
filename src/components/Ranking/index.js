@@ -12,7 +12,7 @@ import store from '../../store';
  */
 const RankingItem = ({ username, acumGanancia, avgGanancia, numApuestas, rank }) => {
   return `
-    <div class="flex gap-x-4">
+    <div class="flex justify-between gap-x-4">
       <div class="text-center my-auto">
         <span>N ${rank} ${username}</span>
       </div>
