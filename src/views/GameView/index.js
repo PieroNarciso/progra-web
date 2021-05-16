@@ -10,13 +10,13 @@ const GameView = () => {
         </div>
         <div id= 'maq_celeste_Mov' class="absolute z-10 grid grid-rows-5 grid-cols-1 w-full h-1/2 items-center justify-items-center">
           <div class="nomMaquina1 flex flex-col justify-start">
-            <h3 id="maquina1" class="text-white pb-3 ml-1 z-20"><p>YOUR<br>FORTUNE</p></h3>
+            <h3 id="maquina1" class="text-white pb-3 ml-1 z-20 ipad:mb-4"><p>YOUR<br>FORTUNE</p></h3>
             <p id='lin1' class="pb-5 m-0 text-center text-black">¡Ganaste!</p>
           </div>
           <div id="imgePirata" class="z-10 row-start-1 mt-14 ml-1">
             <img class="h-10" src="pirata.png">
           </div>
-          <div class="flex row-start-3 mb-1 row-end-4 w-40 mt-16 justify-evenly">
+          <div class="flex row-start-3 mb-1 row-end-4 w-40 mt-16 justify-evenly ipad:-mb-10">
             <input id ='cantidad-maq-1' class="border-white text-white ml-2 w-12 h-5 text-xs bg-black rounded-md border-2" type="text" value="10">
             <div class="flex items-center justify-evenly w-16">
               <img class="h-3"src="coins-g.png">
@@ -24,16 +24,16 @@ const GameView = () => {
               <p id="gan-maq-1" class="text-white text-xs">0<p>
             </div>
           </div>
-          <div class="flex row-start-4 row-end-5 w-40 h-3/5 justify-around">
+          <div class="flex row-start-4 row-end-5 w-40 h-3/5 justify-around ipad:mt-10">
             <button id = 'jugar1' class="apost px-2 py-0 botones rounded-md bg-blue-500 text-white text-xs h-6 border-black"><b>Apostar</b></button>
             <button id = 'jugar4' class="apost px-2 py-0 botones rounded-md bg-blue-500 text-white text-xs h-6 border-black hidden"><b>Cobrar</b></button>
             <div class = "flex p-1 pb-2 items-center h-full z-40">
-              <button id="aumentar1" class="mr-1 botones p-1 pb-0 transform rotate-180 bg-blue-500 text-xs text-white"><b>v</b></button>
-              <button id="disminuir1" class="botones p-1 pt-0 bg-blue-500 text-xs text-white"><b>v</b></button>
+              <button id="aumentar1" class="mr-1 botones p-1 pb-0 transform rotate-180 bg-blue-500 text-xs text-white ipad:mb-5 "><b>v</b></button>
+              <button id="disminuir1" class="botones p-1 pt-0 bg-blue-500 text-xs text-white ipad:mb-5"><b>v</b></button>
             </div>
           </div>
-          <div class="flex justify-around mb-72 row-start-5 w-36">
-            <img id = 'letra1' class ="w-12" src='A.png'>
+          <div class="flex justify-around mb-72 row-start-5 w-36 ipad:-mt-40 ml-50">
+            <img id = 'letra1' class ="w-12 ipad:w-14 mr-10" src='A.png'>
             <img id = 'letra1-1' class ="w-12" src='A.png'>
           </div>
         </div>
@@ -47,29 +47,29 @@ const GameView = () => {
         <div id ='maq_rosa_Mov' class="absolute bottom-0 z-10 grid grid-rows-5 grid-cols-1 w-full h-1/2 items-center justify-items-center">
           <div class="nomMaquina2 flex flex-col justify-start z-20 h-24">
             <h3 id="maquina2" class="mt-24 z-20 ml-1 text-white"><p>CRAZY<br>MACHINE</p></h3>
-            <p id='lin2' class="mt-3 text-center text-black">¡Ganaste!</p>
+            <p id='lin2' class="mt-4 text-center text-black ipad:pt-10">¡Ganaste!</p>
           </div>
           <div id="imgeEgip" class="z-10 row-start-2 mb-7 ml-1">
             <img class="h-11" src="Egipto.png">
           </div>
-          <div class="flex row-start-3 row-end-4 w-40 mt-28 mb-2 justify-evenly">
+          <div class="flex row-start-3 row-end-4 w-40 mt-28 mb-2 justify-evenly md:-mb-10">
             <input id ='cantidad-maq-2' class="border-white text-white ml-2 w-12 h-5 text-xs bg-black rounded-md border-2" type="text" value="10">
             <div class="flex items-center justify-evenly w-16">
               <img class="h-3"src="coins-g.png">
               <p class="text-white text-xs">Gan.:</p>
-              <p id="gan-maq-1" class="text-white text-xs">0<p>
+              <p id="gan-maq-2" class="text-white text-xs">0<p>
             </div>
           </div>
-          <div class="mt-11 flex row-start-4 row-end-5 w-40 h-3/5 justify-around">
+          <div class="mt-11 flex row-start-4 row-end-5 w-40 h-3/5 justify-around ipad:-mb-10">
             <button id = 'jugar2' class="apost px-2 py-0 botones rounded-md bg-pink-500 text-white text-xs h-6 border-black"><b>Apostar</b></button>
             <button id = 'jugar3' class="apost px-2 py-0 botones rounded-md bg-pink-500 text-white text-xs h-6 border-black hidden"><b>Cobrar</b></button>
             <div class = "flex p-1 pb-2 items-center h-full">
-              <button id="aumentar2" class="mr-1 botones p-1 pb-0 transform rotate-180 bg-pink-500 text-xs text-white"><b>v</b></button>
-              <button id="disminuir2" class="botones p-1 pt-0 bg-pink-500 text-xs text-white"><b>v</b></button>
+              <button id="aumentar2" class="mr-1 botones p-1 pb-0 transform rotate-180 bg-pink-500 text-xs text-white ipad:mb-5"><b>v</b></button>
+              <button id="disminuir2" class="botones p-1 pt-0 bg-pink-500 text-xs text-white ipad:mb-5"><b>v</b></button>
             </div>
           </div>
-          <div class="flex justify-around mb-60 row-start-5 w-36">
-            <img id = 'letra2' class ="w-12" src='A.png'>
+          <div class="flex justify-around mb-60 row-start-5 w-36 ipad:-mt-40 ml-50">
+            <img id = 'letra2' class ="w-12 ipad:w-14 mr-10" src='A.png'>
             <img id = 'letra2-1' class ="w-12" src='A.png'>
           </div>
         </div>
@@ -224,7 +224,8 @@ export const GameViewEvents = (viewElement) => {
     }
   }
 
-
+  var gananciaat=0;
+  var gananciabt=0;
   let gananciaa=0;
   let gananciab=0;
   let inte= {};
@@ -236,6 +237,8 @@ export const GameViewEvents = (viewElement) => {
   let zonab= viewElement.querySelector("#letra1-1")
   let zonac=viewElement.querySelector("#letra2");
   let zonad=viewElement.querySelector("#letra2-1");
+  let ganda=viewElement.querySelector("#gan-maq-1");
+  let gandb=viewElement.querySelector("#gan-maq-2");
   var array = ["J.png", "A.png", "K.png"]
   
   function calculo(inte,nu){
@@ -330,6 +333,7 @@ export const GameViewEvents = (viewElement) => {
       inte= apostarYJugar(maquinas['maquinaA'],apt)
       calculo(inte,nu)
       gananciaa=parseInt(inte.ganancia)
+      gananciaat+=parseInt(inte.ganancia*apt)
       setTimeout(() => {
         if(gananciaa == 0){
           botona.disabled=false;
@@ -348,6 +352,7 @@ export const GameViewEvents = (viewElement) => {
       inte = apostarYJugar(maquinas['maquinaB'],apt)
       calculo(inte,nu)
       gananciab=parseInt(inte.ganancia);
+      gananciabt+=parseInt(inte.ganancia*apt)
       setTimeout(() => {
         if(gananciab == 0){
           botonb.disabled=false;
@@ -367,6 +372,7 @@ export const GameViewEvents = (viewElement) => {
   function cobrar(gananciaa,gananciab,apt,nu){
     if(nu==1){
       increaseCoins(gananciaa*apt);
+      ganda.innerHTML=gananciaat.toString();
       botona.classList.remove("hidden")
       botona.classList.replace("bg-gray-400","bg-blue-500");
       botona.disabled=false;
@@ -376,6 +382,7 @@ export const GameViewEvents = (viewElement) => {
     
     if(nu==2){
       increaseCoins(gananciab*apt);
+      gandb.innerHTML=gananciabt.toString();
       botonb.classList.remove("hidden")
       botonb.classList.replace("bg-gray-400","bg-pink-500");
       botonb.disabled=false;
