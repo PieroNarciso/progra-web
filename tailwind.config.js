@@ -3,6 +3,10 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      screens:{
+        'ipad':'768px',
+        'ipadland':'1024px',
+      },
       colors: {
         primary: {
           DEFAULT: '#dc2626',

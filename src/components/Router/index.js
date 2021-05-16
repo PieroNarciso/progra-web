@@ -3,6 +3,7 @@ import MainPage from '../../views/MainPage';
 import GameView, {GameViewEvents} from '../../views/GameView';
 
 import { pickRandName } from '../../utils';
+import store from '../../store';
 
 
 /**
@@ -23,11 +24,6 @@ const Router = (viewElement) => {
     return;
   }
 
-  const audio = document.querySelector("#audiox");
-  audio.volume = 0.1;
-  try {
-    audio.play();
-  } catch { }
   viewElement.innerHTML = '';
 
   // Router logic

@@ -44,6 +44,7 @@ export class State {
   }
 
   storeBeforeSave() {
+    this.music = true;
     this.__addLoginUser();
   }
 

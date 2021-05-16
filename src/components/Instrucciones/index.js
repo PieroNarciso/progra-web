@@ -1,7 +1,7 @@
 const Instrucciones = () => {
   const template = `
     <div
-      class="bg-black bg-opacity-50 absolute inset-0 flex justify-center items-center"
+      class="bg-black bg-opacity-50 absolute inset-0 flex justify-center items-center z-30"
     >
       <div
         class="bg-gray-100 rounded shadow-xl py-1 px-4 w-full h-full border-black border-4"

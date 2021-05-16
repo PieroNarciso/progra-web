@@ -15,6 +15,7 @@ const GameView = () => {
           <div class="nomMaquina1 flex flex-col justify-start md:mt-32 md:-mb-3">
             <h3 id="maquina1" class="text-white pb-3 ml-1 z-20 leading-none"><p>YOUR<br>FORTUNE</p></h3>
             <p id='lin1' class="md:text-lg md:mt-4 pb-5 m-0 text-center text-black md:text-white">¡Ganaste!</p>
+
           </div>
           <!-- IMAGEN -->
           <div id="imgePirata" class="md:mt-80 z-10 row-start-1 mt-14 ml-1">
@@ -219,7 +220,7 @@ export const GameViewEvents = (viewElement) => {
   
   const oprimirapostar = (nu) =>{
     const inputTxt1 = viewElement.querySelector("#cantidad-maq-".concat(nu));
-    if (user.coins > inputTxt1.value) {
+    if (user.coins >= inputTxt1.value) {
       if (nu == 1) {
         botona.disabled = true;
         botona.classList.replace('bg-blue-500','bg-gray-400')
@@ -237,7 +238,8 @@ export const GameViewEvents = (viewElement) => {
     }
   }
 
-
+  var gananciaat=0;
+  var gananciabt=0;
   let gananciaa=0;
   let gananciab=0;
   let inte= {};
@@ -249,6 +251,8 @@ export const GameViewEvents = (viewElement) => {
   let zonab= viewElement.querySelector("#letra1-1")
   let zonac=viewElement.querySelector("#letra2");
   let zonad=viewElement.querySelector("#letra2-1");
+  let ganda=viewElement.querySelector("#gan-maq-1");
+  let gandb=viewElement.querySelector("#gan-maq-2");
   var array = ["J.png", "A.png", "K.png"]
   
   function calculo(inte,nu){
@@ -343,6 +347,7 @@ export const GameViewEvents = (viewElement) => {
       inte= apostarYJugar(maquinas['maquinaA'],apt)
       calculo(inte,nu)
       gananciaa=parseInt(inte.ganancia)
+      gananciaat+=parseInt(inte.ganancia*apt)
       setTimeout(() => {
         if(gananciaa == 0){
           botona.disabled=false;
@@ -361,6 +366,7 @@ export const GameViewEvents = (viewElement) => {
       inte = apostarYJugar(maquinas['maquinaB'],apt)
       calculo(inte,nu)
       gananciab=parseInt(inte.ganancia);
+      gananciabt+=parseInt(inte.ganancia*apt)
       setTimeout(() => {
         if(gananciab == 0){
           botonb.disabled=false;
@@ -380,6 +386,7 @@ export const GameViewEvents = (viewElement) => {
   function cobrar(gananciaa,gananciab,apt,nu){
     if(nu==1){
       increaseCoins(gananciaa*apt);
+      ganda.innerHTML=gananciaat.toString();
       botona.classList.remove("hidden")
       botona.classList.replace("bg-gray-400","bg-blue-500");
       botona.disabled=false;
@@ -389,6 +396,7 @@ export const GameViewEvents = (viewElement) => {
     
     if(nu==2){
       increaseCoins(gananciab*apt);
+      gandb.innerHTML=gananciabt.toString();
       botonb.classList.remove("hidden")
       botonb.classList.replace("bg-gray-400","bg-pink-500");
       botonb.disabled=false;
