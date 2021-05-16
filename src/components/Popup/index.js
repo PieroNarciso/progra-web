@@ -28,8 +28,7 @@ const Popup = ({ username }) => {
         </div>
 
         <div class="flex justify-end mt-4">
-          <button class="btn btn-secondary" type="submit">Close</button>
-          <button class="btn btn-primary ml-2" type="submit">Join Game</button>
+          <button class="btn btn-primary" type="submit">Aceptar</button>
         </div>
       </form>
     </div>
