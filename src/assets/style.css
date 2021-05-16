@@ -28,6 +28,7 @@
 .moneda_img{
     position: absolute; bottom: 0; animation: monedas 3s linear infinite;
     display: block;
+    z-index: 1;
 }
 .moneda_img img{
 
@@ -106,7 +107,6 @@
         color: white;
     }
     50%,100%{
-
         color: white;
         text-shadow: 0 0 10px #2ccc39,
         0 0 20px #00FFFF,
@@ -116,29 +116,17 @@
         0 0 2000px #00FFFF;
     }
 }
-
 @keyframes animac{
-
     0% {
-
         transform: translateY(0);
-
     }
-
     50%{
-
         transform: translateY(4px);
-
     }
-
     100%{
-
         transform: translateY(0);
-
     }
-
 }
-
 
 .nomMaquina2 h3{
     letter-spacing: 4px;
@@ -147,9 +135,6 @@
     font-size: 15pt;
     animation: animac 2.5s linear infinite;
 }
-
-
-
 
 @media (max-width: 858px ){
     .nomMaquina1 h3{
@@ -162,5 +147,3 @@
         font-size: 13px;
     }
 }
-
-

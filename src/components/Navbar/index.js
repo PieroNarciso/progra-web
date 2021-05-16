@@ -19,7 +19,7 @@ const render = () => {
       class="hidden"
     ></audio>
     <nav
-      class="bg-primary px-2 py-2 flex justify-between w-full items-center z-50"
+      class="relative bg-primary px-2 py-2 flex justify-between w-full items-center z-50"
     >
       <div class="flex items-center">
         <h1
