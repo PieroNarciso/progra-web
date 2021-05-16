@@ -81,13 +81,25 @@
     }
 }
 
+
 .nomMaquina1 h3{
     letter-spacing: 4px;
     font-family: "Fredoka One";
     text-align: center;
     font-size: 15pt;
-    line-height: 11px;
+    animation: animac 2.5s linear infinite;
 }
+
+.nomMaquina1 h3:hover{
+    transition: 1.2s;
+    transform:scale(1.07);
+}
+
+.nomMaquina2 h3:hover{
+    transition: 1.2s;
+    transform:scale(1.07);
+}
+
 
 @keyframes anima {
     0%{
@@ -105,13 +117,35 @@
     }
 }
 
+@keyframes animac{
+
+    0% {
+
+        transform: translateY(0);
+
+    }
+
+    50%{
+
+        transform: translateY(4px);
+
+    }
+
+    100%{
+
+        transform: translateY(0);
+
+    }
+
+}
+
 
 .nomMaquina2 h3{
     letter-spacing: 4px;
     font-family: "Fredoka One";
     text-align: center;
     font-size: 15pt;
-    line-height: 11px;
+    animation: animac 2.5s linear infinite;
 }
 
 
@@ -128,17 +162,5 @@
         font-size: 13px;
     }
 }
-
-/*#maq_celeste_Mov:hover{
-    transition: 1.2s;
-    transform:scale(1.10);
-    transform:scale(0.9);
-
-}*/
-
-/*#maq_rosa_Mov:hover {
-    transition: 1.2s;
-    transform:scale(1.07);
-}*/
 
 
