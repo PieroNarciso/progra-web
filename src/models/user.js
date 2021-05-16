@@ -8,6 +8,7 @@ export class User {
    * @param {string} username
    * @param {number} coins
    * @param {MetaData} data
+    * @param {number} numApuestas
    * @param {number} acumGanancia
    * @param {number[]} ganancias
    */
@@ -16,11 +17,13 @@ export class User {
     coins = 200,
     data = [],
     acumGanancia = 0,
-    ganancias = []
+    ganancias = [],
+    numApuestas = 0,
   ) {
     this.username = username || null;
     this.coins = coins;
     this.acumGanancia = acumGanancia;
+    this.numApuestas = numApuestas;
     this.ganancias = ganancias;
     this.metadata = data;
   }
@@ -40,10 +43,28 @@ export class User {
   }
 
   /**
+    * Reset User
+    */
+  resetUser() {
+    this.coins = 200;
+    this.data = [];
+    this.acumGanancia = 0;
+    this.ganancias = [];
+    this.numApuestas = 0;
+  }
+
+  /**
    * @param {number} val
    */
   setCoins(val) {
     this.coins = val;
+  }
+
+  /**
+    * Incrementa el contador de apuestas por el usuario
+    */
+  increaseNumApuestas() {
+    this.numApuestas++;
   }
 
   /**

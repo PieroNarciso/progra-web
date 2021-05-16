@@ -205,7 +205,8 @@ export const GameViewEvents = (viewElement) => {
   
   const oprimirapostar = (nu) =>{
     const inputTxt1 = viewElement.querySelector("#cantidad-maq-".concat(nu));
-    if (user.coins > inputTxt1.value) {
+    if (user.coins >= inputTxt1.value) {
+      user.increaseNumApuestas();
       if (nu == 1) {
         botona.disabled = true;
         botona.classList.replace('bg-blue-500','bg-gray-400')

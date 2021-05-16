@@ -42,7 +42,7 @@ const render = () => {
       <div class="flex items-center">
         <div class="inline-block mr-2 flex items-center">
           <span id="coins-val" class="text-white mr-1 cursor-default"
-            >${user.coins}</span
+            >${user.coins.toFixed(2)}</span
           >
           <svg class=" w-6 h-6 text-yellow-400" viewBox="0 0 24 24">
             <path
@@ -53,7 +53,7 @@ const render = () => {
         </div>
         <div class="inline-block mr-2 flex items-center">
           <span id="ganancia-val" class="text-white mr-1 cursor-default"
-            >${user.acumGanancia}</span
+            >${user.acumGanancia.toFixed(2)}</span
           >
           <svg class=" w-6 h-6 text-yellow-400" viewBox="0 0 24 24">
             <path
