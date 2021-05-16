@@ -5,10 +5,11 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
-      screens:{
-        'gs5':{"raw": "(width: 640px) and (height:360px)"},
-        'ipad':{"raw":"(width:768px) and (height:1024px)"},
-        'ipadland':{"raw":"(width: 1024px) and (height:768px)"},
+      screens: {
+        'gs5': { "raw": "(width: 640px) and (height:360px)" },
+        'ipad': { "raw": "(width:768px) and (height:1024px)" },
+        'ipadland': { "raw": "(width: 1024px) and (height:768px)" },
+        'desk2': { "raw": "(min-width:1025px) and (max-width:1280px)" }
       },
       colors: {
         primary: {
