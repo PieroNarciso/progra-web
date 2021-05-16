@@ -26,24 +26,24 @@ const Instrucciones = () => {
         </div>
         <div class="mt-0 ml-0 text-sm">
           <div
-            class="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-2  my-auto pt-0 lg:pt-10"
+            class="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-2  my-auto pt-0 lg:pt-10 gs5:grid-cols-3 gs5:p-10 gs5:-mt-12 gs5:text-sm"
           >
             <!--Card 1-->
             <div class="rounded overflow-hidden shadow-lg">
               <div class="px-6 py-4">
-                <div class="font-bold text-xl mb-2">1° Paso</div>
-                <p class="text-gray-700 text-base">
+                <div class="font-bold text-xl mb-2 gs5:pt-10">1° Paso</div>
+                <p class="text-gray-700 text-base gs5:pt-3 gs5:text-sm">
                   Introduce la cantidad a apostar
                 </p>
               </div>
-              <div class="px-6 pt-4 pb-2"></div>
+              <div class="px-6 pt-4 pb-2 gs5:px-0 gs5:pt-0 gs5:pb-0"></div>
             </div>
             <!--Card 2-->
 
             <div class="rounded overflow-hidden shadow-lg ">
               <div class="px-5 py-4">
-                <div class="font-bold text-xl mb-2">2° Paso</div>
-                <p class="text-gray-700 text-base text-justify">
+                <div class="font-bold text-xl mb-2 gs5:pt-10 ">2° Paso</div>
+                <p class="text-gray-700 text-base text-justify gs5:text-sm">
                   Cuando se apuesta a una dame máquina, ella responde con 2
                   letras.
                 </p>
@@ -51,11 +51,11 @@ const Instrucciones = () => {
               <div class="px-6 pt-4 pb-2"></div>
             </div>
             <!--Card 3-->
-            <div class="container mx-auto top-10">
+            <div class="container mx-auto top-10 gs5:pt-10">
               <div class="rounded overflow-hidden shadow-lg">
                 <div class="px-6 py-4">
                   <div class="font-bold text-xl mb-2">3° Paso</div>
-                  <p class="text-gray-700 text-base">
+                  <p class="text-gray-700 text-base gs5:text-sm">
                     Si sale JJ, se duplica, si es QQ se triplica, si es KK es
                     diez veces lo apostado. Si sale cualquier otra combinación
                     se pierde lo apostado.
