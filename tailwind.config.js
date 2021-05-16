@@ -1,11 +1,12 @@
+const { minWidth, minHeight } = require('tailwindcss/defaultTheme')
+
 module.exports = {
   purge: ['./index.html', './src/**/*.{js,html}'],
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
       screens:{
-        'ipad':'768px',
-        'ipadland':'1024px',
+        'gs5':{"raw": "(min-width: 640px) and (height:360px)"},
       },
       colors: {
         primary: {
