@@ -181,17 +181,18 @@ const Navbar = () => {
 
   if (username) {
     navBar.querySelector('#header-title').textContent = username;
+    navBar.querySelector('#lapiz').classList.remove('hidden');
   }
 
   /**
    * Mostrar icono de lapiz al colocar el cursor por encima
    */
-  navBar.querySelector('#header-title').addEventListener('mouseenter', () => {
-    navBar.querySelector('#lapiz').classList.remove('hidden');
-  });
-  navBar.querySelector('#header-title').addEventListener('mouseleave', () => {
-    navBar.querySelector('#lapiz').classList.add('hidden');
-  });
+  // navBar.querySelector('#header-title').addEventListener('mouseenter', () => {
+  //   navBar.querySelector('#lapiz').classList.remove('hidden');
+  // });
+  // navBar.querySelector('#header-title').addEventListener('mouseleave', () => {
+  //   navBar.querySelector('#lapiz').classList.add('hidden');
+  // });
 
   /**
    * Abrir emergentes

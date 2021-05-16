@@ -47,6 +47,7 @@ export const PopupEvents = (viewElement) => {
     event.preventDefault();
     const inputValue = viewElement.querySelector('#username-input').value;
     document.querySelector('#header-title').textContent = inputValue;
+    document.querySelector('#lapiz').classList.remove('hidden');
     store.store.changeUsername(inputValue);
     localStorage.setItem('firstTime', true);
     window.location.hash = '#/';
