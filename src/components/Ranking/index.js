@@ -18,7 +18,7 @@ const RankingItem = ({ username, acumGanancia, avgGanancia, numApuestas, rank })
       </div>
       <div class="flex flex-col items-center justify-center">
         <div class="w-full">
-          Ganacias: ${acumGanancia}
+          Ganacias: ${acumGanancia.toFixed(2)}
           <svg class="ml-1 h-6 w-6 text-yellow-400 inline-block" viewBox="0 0 24 24">
             <path
               fill="currentColor"
@@ -27,7 +27,7 @@ const RankingItem = ({ username, acumGanancia, avgGanancia, numApuestas, rank })
           </svg>
         </div>
         <div class="">
-          Promedio: ${avgGanancia}
+          Promedio: ${avgGanancia.toFixed(2)}
           <svg class="ml-1 h-6 w-6 text-yellow-400 inline-block" viewBox="0 0 24 24">
             <path
               fill="currentColor"
